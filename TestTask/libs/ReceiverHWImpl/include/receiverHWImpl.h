@@ -8,6 +8,7 @@
 #include <vector>
 #include "ireceiver.h"
 #include "rtl-sdr.h"
+#include <QObject>
 
 extern "C"{
 #include "convenience.h"
@@ -17,22 +18,16 @@ extern "C"{
 struct RcvHwImplParams{
 };
 
-class ReceiverHWImpl:public IReceiver{
-
+class ReceiverHWImpl:public IReceiver
+{
 public:
     ReceiverHWImpl();
-//    void init()override;
-//    void set_freq(int a) override;
     void set(const ReceiverSettings &settings) override;
-
-
     void start() override;
     void stop() override;
 
-
     ~ReceiverHWImpl() override{
-
-    }
+}
 
 
 
@@ -55,7 +50,7 @@ private:
     uint32_t bytes_to_read;
     int do_exit;
     Complex<uint8_t> *outputBuffer;
-
+//    Complex<int8_t> *outputBuffer;
 };
 
 

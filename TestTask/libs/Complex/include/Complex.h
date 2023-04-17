@@ -9,13 +9,16 @@
 template<typename Type>
 class Complex{
     public:
+    template<typename T>
+    Complex(const Complex<T>& cp): re(cp.re), im(cp.im){
 
-    Complex():re(0),im(0)
-    {}
+    }
     /**
     * @brief Complex конструктор с одним параметром для вещественной части
     */
     Complex(Type Re):re(Re),im(0)
+    {}
+    Complex():re(0),im(0)
     {}
     /**
     * @brief Complex конструктор с двумя параметрами для задания вещественной
@@ -43,13 +46,23 @@ class Complex{
         return re;
     }
 
-    /**
-    * @brief imag метод для вывода мнимой части комплесного числа
-    */
+
     Type imag() const
     {
         return im;
     }
+
+    Type& real()
+    {
+        return re;
+    }
+
+
+    Type& imag()
+    {
+        return im;
+    }
+
 
     /**
     * @brief abs метод для вычисления модуля комплексного числа
@@ -112,6 +125,13 @@ class Complex{
         return *this;
     }
 
+    Complex& operator*=(Type a)
+    {
+        re*=a;
+        im*=a;
+        return *this;
+    }
+
     template<typename U>
     Complex<Type>& operator-=(const Complex<U> c)
     {
@@ -124,6 +144,7 @@ class Complex{
     Complex<Type>& operator-=(const U a)
     {
         re-=a;
+        im-=a;
         return *this;
     }
 
@@ -169,7 +190,7 @@ class Complex{
 
     bool operator==(const Complex<Type> &c) const;
 
-    private:
+    public:
     Type re;
     Type im;
 };

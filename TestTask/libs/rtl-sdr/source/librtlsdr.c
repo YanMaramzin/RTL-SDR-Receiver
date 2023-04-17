@@ -1481,6 +1481,7 @@ int rtlsdr_open(rtlsdr_dev_t **out_dev, uint32_t index)
 	memcpy(dev->fir, fir_default, sizeof(fir_default));
 
 
+
     libusb_init(&dev->ctx);
 
 	dev->dev_lost = 1;

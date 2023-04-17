@@ -27,6 +27,7 @@ project(receiver CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 #select the release build type by default to get optimization flags
 if(NOT CMAKE_BUILD_TYPE)
    set(CMAKE_BUILD_TYPE "Release")
@@ -65,6 +66,7 @@ find_package(LibUSB)
 set(THREADS_USE_PTHREADS_WIN32 true)
 find_package(Threads)
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Network PrintSupport)
+
 
 if(NOT LIBUSB_FOUND)
     message(FATAL_ERROR "LibUSB 1.0 required to compile rtl-sdr")
@@ -138,6 +140,9 @@ add_subdirectory(TestTask/libs/ReceiverSoftImpl)
 add_subdirectory(TestTask/libs/qcustomplot)
 add_subdirectory(TestTask/libs/Complex)
 add_subdirectory(TestTask/libs/Filter)
+add_subdirectory(TestTask/libs/fft)
+add_subdirectory(TestTask/libs/window)
+add_subdirectory(TestTask/libs/WavReader)
 
 
 
@@ -192,11 +197,12 @@ target_link_libraries(${PROJECT_NAME} ReceiverHWImpl)
 target_link_libraries(${PROJECT_NAME} ReceiverSoftImpl)
 target_link_libraries(${PROJECT_NAME} Complex)
 target_link_libraries(${PROJECT_NAME} Filter)
-
+target_link_libraries(${PROJECT_NAME} fft)
+target_link_libraries(${PROJECT_NAME} window)
+target_link_libraries(${PROJECT_NAME} WavReader)
 
 target_link_libraries(
     ${PROJECT_NAME}
-    fftw3
     qcustomplot
     Qt5::Core
     Qt5::Gui

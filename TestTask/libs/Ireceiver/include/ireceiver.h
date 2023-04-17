@@ -16,6 +16,7 @@ struct ReceiverSettings{
     RfSettings rfSettings;
     uint32_t sampleCount;
     Complex<uint8_t> *outputBuffer;
+//    Complex<int8_t> *outputBuffer;
     char const *fileName;
     uint32_t bytes_to_read;
     uint32_t n_read;
