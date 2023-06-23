@@ -10,9 +10,11 @@
 #include <qcustomplot.h>
 #include "receiverHWImpl.h"
 #include "Complex.h"
+#include "fft.h"
+#include "Filter.h"
 
 
-class Window:public QWidget, public QThread
+class Window:public QWidget
 {
     Q_OBJECT
     protected:
@@ -25,7 +27,7 @@ class Window:public QWidget, public QThread
     QLineEdit *bytes_to_readEdit;
     QLabel  *sampleCountLabel;
     QLineEdit *sampleCountEdit;
-    QPushButton *set;
+//    QPushButton *set;
     QPushButton *start; // кнопка старт
     QPushButton *stop; // кнопка стоп
     QCustomPlot *real;
@@ -34,12 +36,12 @@ class Window:public QWidget, public QThread
     public:
         Window(QWidget *parent=0);
         virtual ~Window(){};
-//        ReceiverHWImpl rcv;
+        ReceiverHWImpl rcv;
     public slots:
         void begin();
-        void calc();
-        void setReceiverParameters();
-        void startReceiver(QVector<double> &x,QVector<double> &y);
+//        void setReceiverParameters();
+//        void startReceiver(QVector<double> &x,QVector<double> &y);
+        void startReceiver();
         void stopReceiver();
 
 };

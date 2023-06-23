@@ -9,7 +9,8 @@
 const int REAL=0;
 const int IMAG=1;
 
-void fft(fftw_complex *in, fftw_complex *out,int N);
+//void fft(fftw_complex *in, fftw_complex *out,int N);
+void fft(std::vector<Complex<double>> &in, std::vector<Complex<double>> &out,int N);
 void ifft(fftw_complex *in, fftw_complex *out,int N);
 
 template < typename T >

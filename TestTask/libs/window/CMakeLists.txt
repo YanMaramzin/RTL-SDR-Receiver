@@ -13,8 +13,11 @@ set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC TRUE)
 target_link_libraries(${PROJECT_NAME} ReceiverHWImpl)
 target_link_libraries(${PROJECT_NAME} Complex)
 
+
 target_link_libraries(
     ${PROJECT_NAME}
+    Filter
+    fft
     qcustomplot
     Qt5::Core
     Qt5::Gui

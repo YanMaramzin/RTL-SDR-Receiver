@@ -2,13 +2,25 @@
 
 
 //Функция для прямого преобразовния Фурье
-void fft(fftw_complex *in, fftw_complex *out,int N)
+//void fft(fftw_complex *in, fftw_complex *out,int N)
+//{
+
+//     fftw_plan plan=fftw_plan_dft_1d(N,in,out,FFTW_FORWARD,FFTW_ESTIMATE);
+//     fftw_execute(plan);
+//     fftw_destroy_plan(plan);
+//     fftw_cleanup();
+//}
+
+void fft(std::vector<Complex<double>> &in, std::vector<Complex<double>> &out,int N)
 {
-     fftw_plan plan=fftw_plan_dft_1d(N,in,out,FFTW_FORWARD,FFTW_ESTIMATE);
+     fftw_complex *inFFTW=(fftw_complex *)in.data();
+     fftw_complex *outFFTW=(fftw_complex*)out.data();
+     fftw_plan plan=fftw_plan_dft_1d(N,inFFTW,outFFTW,FFTW_FORWARD,FFTW_ESTIMATE);
      fftw_execute(plan);
      fftw_destroy_plan(plan);
      fftw_cleanup();
 }
+
 
 // Функция для обратного преобразовния Фурье
 void ifft(fftw_complex *in, fftw_complex *out,int N)

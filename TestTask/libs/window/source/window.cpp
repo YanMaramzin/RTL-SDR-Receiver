@@ -18,7 +18,6 @@ Window::Window(QWidget *parent):QWidget(parent)
     sampleCountLabel=new QLabel("Введите число отсчетов:",this);
     sampleCountEdit=new QLineEdit("1024",this);
 
-    set=new QPushButton("Задать параметры приемника");
     start=new QPushButton("Старт");
     stop=new QPushButton("Стоп");
 
@@ -34,7 +33,6 @@ Window::Window(QWidget *parent):QWidget(parent)
     vLayout1->addWidget(spectr);
 
     QHBoxLayout *hLayout=new QHBoxLayout();
-    hLayout->addWidget(set);
     hLayout->addWidget(start);
     hLayout->addWidget(stop);
 
@@ -50,32 +48,22 @@ Window::Window(QWidget *parent):QWidget(parent)
     vLayout2->addLayout(hLayout);
     vLayout2->addStretch();
 
-
-//    QGridLayout* prgdLayout=new QGridLayout;
-//    prgdLayout->addLayout(vLayout1,0,0,1,1);
-//    prgdLayout->addLayout(hLayout,1,1,1,1);
-//    prgdLayout->addLayout(vLayout2,0,1,1,1);
-
     QHBoxLayout *hLayout1 = new QHBoxLayout(this);
     hLayout1->addWidget(frame);
     hLayout1->addLayout(vLayout1);
     hLayout1->addLayout(vLayout2);
 
-
-
     begin();
 
-    connect(set,SIGNAL(clicked(bool)),
-    this,SLOT(setReceiverParameters()));
     connect(start,SIGNAL(clicked(bool)),
     this,SLOT(startReceiver()));
-    connect(stop,SIGNAL(returnPressed()),
+    connect(stop,SIGNAL(clicked(bool)),
     this,SLOT(stopReceiver()));
 }
 
 
 void Window::begin(){
-    real->setMinimumSize(500,200);
+    spectr->setMinimumSize(1000,500);
     real->yAxis->setLabel("A");
     real->xAxis->setLabel("samples");
     imag->yAxis->setLabel("A");
@@ -83,7 +71,7 @@ void Window::begin(){
     spectr->yAxis->setLabel("A");
     spectr->xAxis->setLabel("frequency, Hz");
 
-    this->resize(700,700);
+    this->resize(1000,1000);
     QRect screenGeometry = QApplication::desktop()->screenGeometry();
     int x = (screenGeometry.width() - this->width()) / 2;
     int y = (screenGeometry.height() - this->height()) / 2;
@@ -91,54 +79,85 @@ void Window::begin(){
 
 }
 
-void Window::calc(){
 
-}
+void Window::startReceiver(){
+    ReceiverSettings settings;
+    settings.rfSettings.centralFreq=centFreqEdit->text().toDouble();
+    settings.rfSettings.sampleFreq=sampleFreqEdit->text().toDouble();
+    settings.bytes_to_read=bytes_to_readEdit->text().toDouble();
+    settings.sampleCount=sampleCountEdit->text().toDouble();
+    settings.fileName="Signal.bin";
+    std::vector<Complex<uint8_t>> signal(settings.bytes_to_read);
+    settings.outputBuffer=signal.data();
 
-void Window::setReceiverParameters(){
-//    ReceiverSettings settings;
-//    settings.rfSettings.centralFreq=centFreqEdit->text().toDouble();
-//    settings.rfSettings.sampleFreq=sampleFreqEdit->text().toDouble();
-//    settings.bytes_to_read=bytes_to_readEdit->text().toDouble();
-//    settings.sampleCount=sampleCountEdit->text().toDouble();
-}
-
-
-void Window::startReceiver(QVector<double> &f,QVector<double> &y){
-//    ReceiverSettings settings;
-//    settings.rfSettings.centralFreq=centFreqEdit->text().toDouble();
-//    settings.rfSettings.sampleFreq=sampleFreqEdit->text().toDouble();
-//    settings.bytes_to_read=bytes_to_readEdit->text().toDouble();
-//    settings.sampleCount=sampleCountEdit->text().toDouble();
-//    settings.fileName="Signal.bin";
-
-//    rcv.set(settings);
-//    rcv.start();
+    rcv.set(settings);
+    rcv.start();
 //    rcv.stop();
-//      QVector<double> xRe;
-//      QVector<double> yRe;
-//      grapInit(real,xRe,yRe);
+    std::vector<Complex<double>> signalDouble(signal.begin(),signal.end());
 
-//      QVector<double> xIm;
-//      QVector<double> yIm;
-//      grapInit(imag,xIm,yIm);
+   Complex<double> mean;
+   for(auto& sample: signalDouble)
+   {
+       mean += sample;
+   }
+   mean.re= mean.re/signalDouble.size();
+   mean.im= mean.im/signalDouble.size();
+
+   for(int i=0; i<signalDouble.size();i++)
+   {
+       signalDouble[i].re-=mean.re;
+       signalDouble[i].im-=mean.im;
+   }
+
+   std::vector<Complex<double>> spect(signalDouble.size());
 
 
 
-      QVector<double> freq;
-      QVector<double> Amp;
-      grapInit(spectr,f,y);
+    fft(signalDouble,spect,signalDouble.size());
+    std::vector<double> specA;
+    specA.reserve(spect.size());
+
+    fftShift(spect);
+
+    for(int i=0;i<spect.size();i++)
+        specA.push_back(spect[i].abs());
+
+
+//    FilterMovingAverageNonRec fil;
+
+//    specA=fil.filtration(specA,10);
+
+    QVector<double> specAbs;
+    for(size_t i=0;i<spect.size();i++)
+    {
+        specAbs.push_back(10*log(specA[i]));
+    }
+
+    QVector<double> freqN;
+    double s=(double)settings.rfSettings.centralFreq-(double)settings.rfSettings.sampleFreq/2;
+    freqN.push_back(s);
+    for(int i=0;i<specAbs.size();i++)
+    {
+      freqN.push_back(s+(i*(double)settings.rfSettings.sampleFreq/specAbs.size()));
+      std::cout<<freqN[i]<<std::endl;
+    }
+    QVector<double> sample;
+    QVector<double> yRe;
+    QVector<double> yIm;
+    for(int i=0;i<specAbs.size();i++)
+    {
+      sample.push_back(i);
+      yRe.push_back(spect[i].real());
+      yIm.push_back(spect[i].imag());
+    }
+
+    grapInit(real,sample,yRe);
+    grapInit(imag,sample,yIm);
+    grapInit(spectr,freqN,specAbs);
 }
 
 void Window::stopReceiver(){
-//    rcv.stop();
-}
-
-QVector<double> soz(QVector<Complex<double>> &vec){
-     QVector<double> x;
-     for(size_t i=0;i<vec.size();i++)
-         x.push_back(vec[i].real());
-     return x;
+    rcv.stop();
 }
 
 void grapInit(QCustomPlot *graph,QVector<double> &x,QVector<double> &y)
@@ -149,4 +168,3 @@ void grapInit(QCustomPlot *graph,QVector<double> &x,QVector<double> &y)
     graph->graph()->rescaleAxes();
     graph->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 }
-

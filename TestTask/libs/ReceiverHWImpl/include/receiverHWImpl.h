@@ -18,7 +18,7 @@ extern "C"{
 struct RcvHwImplParams{
 };
 
-class ReceiverHWImpl:public IReceiver
+class ReceiverHWImpl:public QObject,public IReceiver
 {
 public:
     ReceiverHWImpl();
@@ -26,10 +26,9 @@ public:
     void start() override;
     void stop() override;
 
+
     ~ReceiverHWImpl() override{
 }
-
-
 
 private:
     char const *filename;

@@ -76,11 +76,11 @@ void ReceiverHWImpl::set(const ReceiverSettings &settings)
 
 void ReceiverHWImpl::start(){
 
-        file = fopen(filename, "wb");
-        if (!file)
-        {
-            fprintf(stderr, "Failed to open %s\n", filename);
-        }
+//        file = fopen(filename, "wb");
+//        if (!file)
+//        {
+//            fprintf(stderr, "Failed to open %s\n", filename);
+//        }
         /* Reset endpoint before we start reading from it (mandatory) */
         verbose_reset_buffer(dev);
         if (sync_mode) {
@@ -97,10 +97,10 @@ void ReceiverHWImpl::start(){
                     do_exit = 1;
                 }
 
-                if (fwrite(outputBuffer, 1, n_read, file) != (size_t)n_read) {
-                    fprintf(stderr, "Short write, samples lost, exiting!\n");
-                    break;
-                }
+//                if (fwrite(outputBuffer, 1, n_read, file) != (size_t)n_read) {
+//                    fprintf(stderr, "Short write, samples lost, exiting!\n");
+//                    break;
+//                }
 
 //                if ((uint32_t)n_read < out_block_size) {
 //                    fprintf(stderr, "Short read, samples lost, exiting!\n");

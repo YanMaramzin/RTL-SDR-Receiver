@@ -1,30 +1,18 @@
 #include <iostream>
 #include "receiverHWImpl.h"
-#include "receiverSoftImpl.h"
 #include <QApplication>
 #include "qcustomplot.h"
 #include <vector>
 #include <memory>
 #include <QVector>
 #include "Complex.h"
-#include "fftw3.h"
 #include <algorithm>
 #include "Filter.h"
 #include "fft.h"
+#include <QLineEdit>
 #include "window.h"
-#include <thread>
-#include "WavReader.h"
-enum class ReceiverType {
-    soft, hw
-};
 
-void error() {
-    throw std::runtime_error(" ////error description ");
-}
-
-//using ComplexSignal = std::vector<Complex<uint8_t>>;
 using ComplexSignal = std::vector<Complex<uint8_t>>;
-
 
 struct ResultMessage {
     ResultMessage(const RfSettings &settings, ComplexSignal &&signal):
@@ -34,6 +22,7 @@ struct ResultMessage {
 };
 
 void sendResultToClient( const ReceiverSettings& inputSettings, ComplexSignal&& signal){
+
     ResultMessage message(inputSettings.rfSettings, std::move(signal));
     std::cout<<"Центральная частота:"<<message.settings.centralFreq<<"\n";
     std::cout<<"Частота дискретизации:"<<message.settings.sampleFreq<<"\n";
@@ -42,44 +31,45 @@ void sendResultToClient( const ReceiverSettings& inputSettings, ComplexSignal&& 
         std::cout<<message.signal[i].real()+0<<" "<<message.signal[i].imag()+0<<"\n";
 }
 
-template<typename T>
-T meanComplex(std::vector<T> &vec){
-        T mean;
-        for(auto& sample: vec){
-            mean += sample;
-        }
-        mean.re= mean.re/vec.size();
-        mean.im= mean.im/vec.size();
 
-}
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc,argv);
-    Window w(0);
-
-    ReceiverSettings settings;
-    settings.rfSettings.centralFreq=425e6;
-    settings.rfSettings.sampleFreq=2.4e6;
-    settings.sync_mode=1;
-    settings.fileName="Signal.bin";
-    settings.sampleCount=512*100;
-    settings.bytes_to_read=256*100;
-    settings.n_read=1;
-    settings.direct_sampling=0;
-    ReceiverHWImpl rcv;
-
-    ComplexSignal signal(settings.bytes_to_read);
-//    w.startReceiver(rcv);
+//    QWidget w;
+    Window w;
+//    w.setMinimumSize(1000,1000);
 
 
 
-    settings.outputBuffer = signal.data();
+//    QCustomPlot *graphOne=new QCustomPlot(&w);
+//    QCustomPlot *graphSecond=new QCustomPlot(&w);
+//    QCustomPlot *graphThird=new QCustomPlot(&w);
+//    graphThird->resize(500,500);
+//    QLabel* centerFreqLabel=new QLabel("&Центральная частота");
+//    QLineEdit* centerFreqEdit=new QLineEdit(&w);
 
-    rcv.set(settings);
-    rcv.start();
+//    QGridLayout* grid=new QGridLayout(&w);
+//    grid->addWidget(graphThird,0,0);
+//    grid->addWidget(centerFreqLabel,0,1);
+//    grid->addWidget(centerFreqEdit,1,1);
 
-    std::vector<Complex<double>> signalDouble(signal.begin(), signal.end());
+//    ReceiverSettings settings;
+//    settings.rfSettings.centralFreq=88.4e6;
+//    settings.rfSettings.sampleFreq=2.4e6;
+//    settings.sync_mode=1;
+//    settings.fileName="Signal.bin";
+//    settings.sampleCount=512;
+//    settings.bytes_to_read=256;
+//    settings.n_read=1;
+//    settings.direct_sampling=0;
+//    ReceiverHWImpl rcv;
+//    ComplexSignal signal(settings.bytes_to_read);
+//    settings.outputBuffer=signal.data();
+
+//    rcv.set(settings);
+//    rcv.start();
+//    std::vector<Complex<double>> signalDouble(signal.begin(),signal.end());
 
 
 
@@ -99,20 +89,39 @@ int main(int argc, char *argv[])
 //        signalDouble[i]*=(1.0 / 128.0);
 //    }
 
-    std::vector<Complex<double>> spect(signalDouble.size());
 
-    fft((fftw_complex*)signalDouble.data(),(fftw_complex*)spect.data(),signalDouble.size());
-//    fftShift(spect);
+//        std::vector<Complex<double>> spect(signalDouble.size());
 
-    std::vector<double> specA;
-    specA.reserve(spect.size());
+//        fft(signalDouble,spect,signalDouble.size());
+//        std::vector<double> specA;
+//        specA.reserve(spect.size());
 
-    for(int i=0;i<spect.size();i++)
-        specA.push_back(spect[i].abs());
+//        fftShift(spect);
 
-    FilterMovingAverageNonRec fil;
+//        for(int i=0;i<spect.size();i++)
+//            specA.push_back(spect[i].abs());
 
-    specA=fil.filtration(specA,50);
+
+//        FilterMovingAverageNonRec fil;
+
+//        specA=fil.filtration(specA,10);
+
+//        QVector<double> specAbs;
+//        for(size_t i=0;i<spect.size();i++)
+//        {
+//            specAbs.push_back(10*log(specA[i]));
+//        }
+
+
+//        QVector<double> freqN;
+//        for(int i=0;i<specAbs.size();i++)
+//        {
+//          double s;
+//          s=(double)settings.rfSettings.centralFreq+(i*(double)settings.rfSettings.sampleFreq/specAbs.size());
+//          freqN.push_back(s);
+//        }
+
+
 
 //    QVector<Complex<uint8_t>> vec;
 //    vec.resize(signal.size());
@@ -123,7 +132,7 @@ int main(int argc, char *argv[])
 //    QVector<double> xRe;
 //    QVector<double> yIm;
 //    QVector<double> xIm;
-    QVector<double> specAbs;
+//    QVector<double> specAbs;
 
 //    for(size_t i=0;i<vec.size();i++)
 //        yRe.push_back(vec[i].real());
@@ -133,44 +142,35 @@ int main(int argc, char *argv[])
 //        yIm.push_back(vec[i].imag());
 //    for(size_t i=0;i<vec.size();i++)
 //        xIm.push_back(i);
-    for(size_t i=0;i<spect.size();i++)
-    {
-        specAbs.push_back(10*log(specA[i]));
-    }
+//    for(size_t i=0;i<spect.size();i++)
+//    {
+//        specAbs.push_back(10*log(specA[i]));
+//    }
 
-    QVector<double> freqN;
-    for(int i=0;i<specAbs.size();i++)
-    {
-      double s;
-      s=(double)settings.rfSettings.centralFreq+(i*(double)settings.rfSettings.sampleFreq/specAbs.size());
-      freqN.push_back(s);
-    }
-
-    w.startReceiver(freqN,specAbs);
-    rcv.stop();
-
+//    QVector<double> freqN;
+//    for(int i=0;i<specAbs.size();i++)
+//    {
+//      double s;
+//      s=(double)settings.rfSettings.centralFreq+(i*(double)settings.rfSettings.sampleFreq/specAbs.size());
+//      freqN.push_back(s);
+//    }
 
 
 //    graphOne->addGraph();
-//    graphOne->graph()->setData(xRe,yRe);
+//    graphOne->graph()->setData(freqN,specAbs);
 //    graphOne->graph()->rescaleAxes();
 
 //    graphOne->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 
-//    graphSecond->addGraph();
-//    graphSecond->graph()->setData(xIm,yIm);
-//    graphSecond->graph()->rescaleAxes();
-
-//    graphSecond->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 
 //    graphThird->addGraph();
 //    graphThird->graph()->setData(freqN,specAbs);
 //    graphThird->graph()->rescaleAxes();
 
 //    graphThird->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+
 //    rcv.stop();
-
     w.show();
-
     return a.exec();
 }
+

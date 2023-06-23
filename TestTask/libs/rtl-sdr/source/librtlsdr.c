@@ -1698,7 +1698,7 @@ int rtlsdr_close(rtlsdr_dev_t *dev)
 
 	free(dev);
 
-	return 0;
+    return 0;
 }
 
 int rtlsdr_reset_buffer(rtlsdr_dev_t *dev)
