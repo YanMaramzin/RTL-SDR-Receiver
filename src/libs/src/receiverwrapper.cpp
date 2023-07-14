@@ -2,8 +2,10 @@
 #include "receiverhwimpl.h"
 
 
-IReceiver* ReceiverWrapper::getReceiverByName(std::string name)
+std::unique_ptr<IReceiver> ReceiverWrapper::getReceiverByName(std::string name)
 {
     if (name == "hw")
-        return new ReceiverHWImpl();
+        return std::unique_ptr<IReceiver> {
+            new ReceiverHWImpl()
+        };
 }
