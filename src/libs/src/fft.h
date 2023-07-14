@@ -1,6 +1,6 @@
 #pragma once
 
-#include "include/Complex.h"
+#include "include/complex.h"
 #include "fftw3.h"
 #include <vector>
 #include <algorithm>

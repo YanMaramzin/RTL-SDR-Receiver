@@ -25,7 +25,7 @@ endif()
 add_library(${PROJECT_NAME} SHARED
     include/ireceiver.h
     include/receiverwrapper.h
-    include/Complex.h
+    include/complex.h
 
     src/fft.h
     src/fft.cpp
