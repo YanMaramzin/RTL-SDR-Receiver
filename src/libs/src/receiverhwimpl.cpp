@@ -5,26 +5,51 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <rtl-sdr.h>
+#include "rtl-sdr.h"
+#include "fft.h"
 
-
-
-ReceiverHWImpl::ReceiverHWImpl()
+struct ReceiverHWImpl::Pimpl
 {
-    open();
+    void set(const ReceiverSettings &settings);
+    void open();
+    int n_read;
+    int dev_index {0};
+    int dev_given {0};
+    rtlsdr_dev_t *dev {nullptr};
+    int do_exit {0};
+
+    int deviceSearch(char const *s);
+    int setCenterFreq(uint32_t freq);
+    int setSampleRate(uint32_t samp_rate);
+    int setAutoGain();
+    int nearestGain(int gain);
+    int setGain(int gain);
+    int setDirectSampling(int on);
+    int setPpm(int ppm_error);
+    void setAgcMode(int on);
+    void setOffsetTuningOn();
+    int resetBuffer();
+
+    static uint32_t roundPowerTwo(uint32_t &size);
+};
+
+
+ReceiverHWImpl::ReceiverHWImpl() : m_d(std::make_unique<Pimpl>())
+{
+    m_d->open();
 }
 
 
 ReceiverHWImpl::~ReceiverHWImpl()
 {
-    rtlsdr_close(dev);
+    rtlsdr_close(m_d->dev);
 }
 
 /**
  * @brief Метод для открытия свистка. Сначала вызывается метод
  * deviceSearch(), чтобы определить что это за свисток.
 */
-void ReceiverHWImpl::open()
+void ReceiverHWImpl::Pimpl::open()
 {
     dev_index = deviceSearch("0");
     int r = rtlsdr_open(&dev, (uint32_t)dev_index);
@@ -45,7 +70,8 @@ void ReceiverHWImpl::open()
  * Также возможно включить режим автоматического контроля
  * усиления.
 */
-void ReceiverHWImpl::set(const ReceiverSettings &settings)
+
+void ReceiverHWImpl::Pimpl::set(const ReceiverSettings &settings)
 {
     n_read = settings.n_read;
 
@@ -84,17 +110,17 @@ void ReceiverHWImpl::set(const ReceiverSettings &settings)
 
 bool ReceiverHWImpl::getComplex(const ReceiverSettings &settings, ReceiverHWImpl::Buffer &out)
 {
-    set(settings);
-    uint32_t size = settings.sampleCount;
-    size = roundPowerTwo(size);
+    m_d->set(settings);
+    auto size = settings.sampleCount;
+    size = m_d->roundPowerTwo(size);
     out.resize(size);
-    uint32_t bytesToRead = 2 * settings.sampleCount;
-    bytesToRead = roundPowerTwo(bytesToRead);
-    resetBuffer();
-        auto result = rtlsdr_read_sync(dev, out.data(), bytesToRead, &n_read);
+    auto bytesToRead = 2 * settings.sampleCount;
+    bytesToRead = m_d->roundPowerTwo(bytesToRead);
+    m_d->resetBuffer();
+    auto result = rtlsdr_read_sync(m_d->dev, out.data(), bytesToRead, &(m_d->n_read));
 
-        if (result < 0)
-            std::cerr << "WARNING: sync read failed." << std::endl;
+    if (result < 0)
+        std::cerr << "WARNING: sync read failed." << std::endl;
 
     return result;
 }
@@ -108,21 +134,21 @@ bool ReceiverHWImpl::getComplex(const ReceiverSettings &settings, ReceiverHWImpl
 void ReceiverHWImpl::getSpectrum(const ReceiverSettings &settings, IReceiver::SpectBuff &out)
 {
     IReceiver::Buffer signal;
-    uint32_t size = settings.sampleCount;
-    size = roundPowerTwo(size);
+    auto size = settings.sampleCount;
+    size = m_d->roundPowerTwo(size);
     signal.resize(size);
     getComplex(settings, signal);
 
     std::vector<Complex<float>> signalFloat;
     signalFloat.resize(size);
-    for (int i = 0; i < signalFloat.size(); i++) {
+    for (size_t i = 0; i < signalFloat.size(); i++) {
         signalFloat[i].re = (static_cast<float>(signal[i].re) - 127.5f);
         signalFloat[i].im = (static_cast<float>(signal[i].im) - 127.5f);
     }
 
     IReceiver::SpectBuff signalDouble(signalFloat.begin(), signalFloat.end());
 
-    for(int i = 0; i < signalDouble.size(); i++) {
+    for(size_t i = 0; i < signalDouble.size(); i++) {
         if (i % 2 == 0)
             signalDouble[i] = -signalDouble[i];
     }
@@ -135,18 +161,19 @@ void ReceiverHWImpl::getSpectrum(const ReceiverSettings &settings, IReceiver::Sp
  * @brief Функция для поиска устройства.
  * Также она выводит название устройства, производителя и серию.
 */
-int ReceiverHWImpl::deviceSearch(char const *s)
-{
-    int i, device_count, device, offset;
+int ReceiverHWImpl::Pimpl::deviceSearch(char const *s)
+{    
+    int device;
+    int offset;
     char *s2;
     char vendor[256] = {0}, product[256] = {0}, serial[256] = {0};
-    device_count = rtlsdr_get_device_count();
+    auto device_count = rtlsdr_get_device_count();
     if (!device_count) {
         std::cerr << "No supported devices found.\n";
         return -1;
     }
     std::cerr <<"Found "<< device_count << " device(s):\n";
-    for (i = 0; i < device_count; i++) {
+    for (int i = 0; i < device_count; i++) {
         if (rtlsdr_get_device_usb_strings(i, vendor, product, serial) == 0) {
             std::cerr << i << ": " << vendor << ", " << product << ", " << serial << "\n";
         } else {
@@ -161,7 +188,7 @@ int ReceiverHWImpl::deviceSearch(char const *s)
         return device;
     }
     /* does string exact match a serial */
-    for (i = 0; i < device_count; i++) {
+    for (int i = 0; i < device_count; i++) {
         rtlsdr_get_device_usb_strings(i, vendor, product, serial);
         if (strcmp(s, serial) != 0) {
             continue;}
@@ -170,7 +197,7 @@ int ReceiverHWImpl::deviceSearch(char const *s)
         return device;
     }
     /* does string prefix match a serial */
-    for (i = 0; i < device_count; i++) {
+    for (int i = 0; i < device_count; i++) {
         rtlsdr_get_device_usb_strings(i, vendor, product, serial);
         if (strncmp(s, serial, strlen(s)) != 0) {
             continue;}
@@ -179,7 +206,7 @@ int ReceiverHWImpl::deviceSearch(char const *s)
         return device;
     }
     /* does string suffix match a serial */
-    for (i = 0; i < device_count; i++) {
+    for (int i = 0; i < device_count; i++) {
         rtlsdr_get_device_usb_strings(i, vendor, product, serial);
         offset = strlen(serial) - strlen(s);
         if (offset < 0) {
@@ -197,10 +224,9 @@ int ReceiverHWImpl::deviceSearch(char const *s)
 /**
  * @brief Метод для установки центральной частоты.
 */
-int ReceiverHWImpl::setCenterFreq(uint32_t freq)
+int ReceiverHWImpl::Pimpl::setCenterFreq(uint32_t freq)
 {
-    int r;
-    r = rtlsdr_set_center_freq(dev, freq);
+    auto r = rtlsdr_set_center_freq(dev, freq);
     if (r < 0)
         std::cerr << "WARNING: Failed to set center freq.\n";
     else
@@ -211,10 +237,9 @@ int ReceiverHWImpl::setCenterFreq(uint32_t freq)
 /**
  * @brief Метод для установки частоты дискретизации приемника.
 */
-int ReceiverHWImpl::setSampleRate(uint32_t samp_rate)
+int ReceiverHWImpl::Pimpl::setSampleRate(uint32_t samp_rate)
 {
-    int r;
-    r = rtlsdr_set_sample_rate(dev, samp_rate);
+    auto r = rtlsdr_set_sample_rate(dev, samp_rate);
     if (r < 0)
         std::cerr << "WARNING: Failed to set sample rate.\n";
     else
@@ -226,10 +251,9 @@ int ReceiverHWImpl::setSampleRate(uint32_t samp_rate)
  * @brief Метод, который устанавливает автоматическое усисление
  * приемника.
 */
-int ReceiverHWImpl::setAutoGain()
+int ReceiverHWImpl::Pimpl::setAutoGain()
 {
-    int r;
-    r = rtlsdr_set_tuner_gain_mode(dev, 0);
+    auto r = rtlsdr_set_tuner_gain_mode(dev, 0);
     if (r != 0)
         std::cerr << "WARNING: Failed to set tuner gain.\n";
     else
@@ -242,36 +266,37 @@ int ReceiverHWImpl::setAutoGain()
  * возможно установить для данного приемника.
 */
 
-int ReceiverHWImpl::nearestGain(int gain)
-{
-    int i, r, err1, err2, count, nearest;
+int ReceiverHWImpl::Pimpl::nearestGain(int gain)
+{    
     std::vector<int> gains;
-    r = rtlsdr_set_tuner_gain_mode(dev, 1);
+
+    auto r = rtlsdr_set_tuner_gain_mode(dev, 1);
     if (r < 0) {
         std::cerr << "WARNING: Failed to enable manual gain.\n";
         return r;
     }
-    count = rtlsdr_get_tuner_gains(dev, nullptr);
-    if (count <= 0) {
+
+    auto count = rtlsdr_get_tuner_gains(dev, nullptr);
+    if (count <= 0)
         return 0;
-    }
+
     count = rtlsdr_get_tuner_gains(dev, gains.data());
     gains.resize(count);
-    nearest = gains[0];
-    for (i = 0; i < count; i++) {
-        err1 = abs(gain - nearest);
-        err2 = abs(gain - gains[i]);
-        if (err2 < err1) {
-            nearest = gains[i];
-        }
+    auto nearest = gains[0];
+    for (auto i = 0; i < count; i++) {
+        auto err1 = abs(gain - nearest);
+        auto err2 = abs(gain - gains[i]);
+        if (err2 < err1)
+            nearest = gains[i];       
     }
+
     return nearest;
 }
 
 /**
  * @brief Метод для установки усиления.
 */
-int ReceiverHWImpl::setGain(int gain)
+int ReceiverHWImpl::Pimpl::setGain(int gain)
 {
     int r;
     r = rtlsdr_set_tuner_gain_mode(dev, 1);
@@ -295,7 +320,7 @@ int ReceiverHWImpl::setGain(int gain)
  * 2 - Включение режима прямой выборки для вывода Q
  * 3 - Включен режим прямой выборки
 */
-int ReceiverHWImpl::setDirectSampling(int on)
+int ReceiverHWImpl::Pimpl::setDirectSampling(int on)
 {
     int r;
     r = rtlsdr_set_direct_sampling(dev, on);
@@ -316,7 +341,7 @@ int ReceiverHWImpl::setDirectSampling(int on)
     return r;
 }
 
-int ReceiverHWImpl::setPpm(int ppm_error)
+int ReceiverHWImpl::Pimpl::setPpm(int ppm_error)
 {
     int r;
     if (ppm_error == 0)
@@ -329,7 +354,7 @@ int ReceiverHWImpl::setPpm(int ppm_error)
     return r;
 }
 
-void ReceiverHWImpl::setOffsetTuningOn()
+void ReceiverHWImpl::Pimpl::setOffsetTuningOn()
 {
     rtlsdr_set_offset_tuning(dev, 1);
 }
@@ -342,7 +367,7 @@ void ReceiverHWImpl::setOffsetTuningOn()
  * генератора приемник отсекал часть синусоиды сверху и снизу из-за этого часть
  * данных была неправильной.
 */
-void ReceiverHWImpl::setAgcMode(int on)
+void ReceiverHWImpl::Pimpl::setAgcMode(int on)
 {
     rtlsdr_set_agc_mode(dev, on);
     if (on)
@@ -356,7 +381,7 @@ void ReceiverHWImpl::setAgcMode(int on)
  * перед чтением данных (асинхронным или синхронным)
 */
 
-int ReceiverHWImpl::resetBuffer()
+int ReceiverHWImpl::Pimpl::resetBuffer()
 {
     int r;
     r = rtlsdr_reset_buffer(dev);
@@ -370,7 +395,7 @@ int ReceiverHWImpl::resetBuffer()
  * Он необходим для того, чтобы можно было правильно считать данные.
 */
 
-uint32_t ReceiverHWImpl::roundPowerTwo(uint32_t &size)
+uint32_t ReceiverHWImpl::Pimpl::roundPowerTwo(uint32_t &size)
 {
     auto result = size - 1;
     for(unsigned k = 0; k <= 4; ++k)
@@ -378,12 +403,4 @@ uint32_t ReceiverHWImpl::roundPowerTwo(uint32_t &size)
     ++result;
     return result;
 }
-
-
-
-
-
-
-
-
 

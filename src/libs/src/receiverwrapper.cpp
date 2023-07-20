@@ -5,7 +5,7 @@
 std::unique_ptr<IReceiver> ReceiverWrapper::getReceiverByName(std::string name)
 {
     if (name == "hw")
-        return std::unique_ptr<IReceiver> {
-            new ReceiverHWImpl()
-        };
+        return std::make_unique<ReceiverHWImpl>();
+
+    return nullptr;
 }
