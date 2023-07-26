@@ -34,22 +34,25 @@ add_library(${PROJECT_NAME} SHARED
     src/receiversoftimpl.h
     src/receiversoftimpl.cpp
     src/receiverwrapper.cpp
-    share/rtl-sdr.h
-    share/librtlsdr.c
-    share/reg_field.h
-    share/rtl-sdr_export.h
-    share/rtlsdr_i2c.h
-    share/tuner_e4k.h
-    share/tuner_e4k.c
-    share/tuner_fc0012.h
-    share/tuner_fc0012.c
-    share/tuner_fc0013.h
-    share/tuner_fc0013.c
-    share/tuner_fc2580.h
-    share/tuner_fc2580.c
-    share/tuner_r82xx.h
-    share/tuner_r82xx.c
+#    share/rtl-sdr.h
+#    share/librtlsdr.c
+#    share/reg_field.h
+#    share/rtl-sdr_export.h
+#    share/rtlsdr_i2c.h
+#    share/tuner_e4k.h
+#    share/tuner_e4k.c
+#    share/tuner_fc0012.h
+#    share/tuner_fc0012.c
+#    share/tuner_fc0013.h
+#    share/tuner_fc0013.c
+#    share/tuner_fc2580.h
+#    share/tuner_fc2580.c
+#    share/tuner_r82xx.h
+#    share/tuner_r82xx.c
+
 )
+
+add_subdirectory(librtlsdr)
 
 generate_export_header(${PROJECT_NAME})
 
@@ -66,3 +69,4 @@ PRIVATE
 
 target_link_libraries(${PROJECT_NAME} ${LIBUSB_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} fftw3)
+target_link_libraries(${PROJECT_NAME} rtlsdr)
