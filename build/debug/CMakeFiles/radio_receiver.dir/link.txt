@@ -1,0 +1,1 @@
+/usr/bin/afl-g++ -ggdb -g -O0 CMakeFiles/radio_receiver.dir/main.cpp.o -o radio_receiver  -Wl,-rpath,/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs src/libs/libreceiver.so /usr/lib/x86_64-linux-gnu/libusb-1.0.so -lfftw3 

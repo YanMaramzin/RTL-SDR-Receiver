@@ -1,0 +1,8 @@
+/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/radio_receiver.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/edit_cache.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/rebuild_cache.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/src/CMakeFiles/edit_cache.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/src/CMakeFiles/rebuild_cache.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/CMakeFiles/receiver.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/CMakeFiles/edit_cache.dir
+/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/CMakeFiles/rebuild_cache.dir
