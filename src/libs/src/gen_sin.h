@@ -5,7 +5,7 @@
 #include "include/complex.h"
 #include <cmath>
 
-class Generator_sin { // определение сюда
+class Generator_sin { // определение сюда тк у шаблонных классов обявление и реализация должна быть в 1 файле
 
 public:
 
