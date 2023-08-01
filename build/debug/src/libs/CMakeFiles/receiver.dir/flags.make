@@ -3,13 +3,13 @@
 
 # compile C with /usr/bin/afl-gcc
 # compile CXX with /usr/bin/afl-g++
-C_DEFINES = -Dreceiver_EXPORTS
+C_DEFINES = -DHAVE_LIBUSB_ERROR_NAME=1 -DHAVE_LIBUSB_HANDLE_EVENTS_TIMEOUT_COMPLETED=1 -Dreceiver_EXPORTS
 
 C_INCLUDES = -I/home/ann/WORK/work_qt/radio_receiver/src/libs -I/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs -I/usr/include/libusb-1.0
 
 C_FLAGS = -g -fPIC
 
-CXX_DEFINES = -Dreceiver_EXPORTS
+CXX_DEFINES = -DHAVE_LIBUSB_ERROR_NAME=1 -DHAVE_LIBUSB_HANDLE_EVENTS_TIMEOUT_COMPLETED=1 -Dreceiver_EXPORTS
 
 CXX_INCLUDES = -I/home/ann/WORK/work_qt/radio_receiver/src/libs -I/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs -I/usr/include/libusb-1.0
 

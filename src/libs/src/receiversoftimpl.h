@@ -28,7 +28,7 @@ private:
     void set( const fakeParams* fakeset )const;
     template < typename Type >
     std::vector< Complex< Type > > GenSignal( const fakeParams* fakeset );
-    fakeParams* f_p = 0;
+    fakeParams* f_p { 0 };
 
 
 };

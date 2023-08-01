@@ -43,7 +43,7 @@ struct fakeParams: public BaseSettings {
     uint32_t fd;
     // uint64_t size;
     float noiseLVL;
-    sinParams sinPar;
+    std::vector< sinParams > sinPar;
 
 protected:
     virtual void foo() {
