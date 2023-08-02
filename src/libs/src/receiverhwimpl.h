@@ -15,8 +15,9 @@ public:
     virtual bool getComplex( const BaseSettings* settings, Buffer& out ) override final;
     virtual void getSpectrum( const BaseSettings* settings, SpectBuff& out )override final;
     virtual void setSettings(  BaseSettings* sett )  override final;
-    // bool getComplex(  Buffer& );
-    // void getSpectrum(  SpectBuff& );
+
+    virtual bool getComplex(  Buffer& out  ) override final;
+    virtual void getSpectrum(  SpectBuff& out ) override final;
 
 
 private:

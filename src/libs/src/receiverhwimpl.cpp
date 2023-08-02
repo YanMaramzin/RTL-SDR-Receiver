@@ -135,7 +135,14 @@ bool ReceiverHWImpl::getComplex( const BaseSettings* settings, ReceiverHWImpl::B
     return result;
 }
 
+bool ReceiverHWImpl::getComplex(  Buffer& out ) {
 
+
+}
+void ReceiverHWImpl::getSpectrum(  SpectBuff& out ) {
+
+
+}
 
 
 /**

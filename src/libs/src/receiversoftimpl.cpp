@@ -59,23 +59,28 @@ void FakeReceiver::getSpectrum( const BaseSettings* settings, SpectBuff& out ) {
 
 }
 
-/*
-   bool FakeReceiver::getComplex(  Buffer& ) {
+bool FakeReceiver::getComplex(  Buffer& out ) {
 
-    std::vector< Complex< uint8_t > > data = this->GenSignal< uint8_t >();
-    for( uint64_t i = 0; i < fakeSettings.sampleCount; i++ ) {
+    std::vector< Complex< uint8_t > > data = this->GenSignal< uint8_t >( f_p );
+    auto sizeBuff = f_p->sampleCount;
+    out.resize( sizeBuff );
+    for( uint64_t i = 0; i < f_p->sampleCount; i++ ) {
         out[ i ] = data[ i ];
     }
     return 1;
-   }
 
-   void FakeReceiver::getSpectrum(  SpectBuff& ) {
+}
+void FakeReceiver::getSpectrum(  SpectBuff& out ) {
 
-    SpectBuff dataIN = this->GenSignal< double >();
-    fft( dataIN, out, fakeSettings.sampleCount );
 
-   }
- */
+    SpectBuff dataIN = this->GenSignal< double >(  f_p );
+    auto sizeBuff =  f_p->sampleCount;
+    out.resize( sizeBuff );
+    fft( dataIN, out,  f_p->sampleCount );
+
+}
+
+
 
 
 
