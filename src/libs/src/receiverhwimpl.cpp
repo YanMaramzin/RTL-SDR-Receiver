@@ -11,7 +11,7 @@
 struct ReceiverHWImpl::Pimpl {
 	void set( const ReceiverSettings& settings );
 	void open();
-	int n_read;
+	int n_read{ 0 };
 	int dev_index { 0 };
 	int dev_given { 0 };
 	rtlsdr_dev_t* dev { nullptr };
@@ -68,25 +68,28 @@ void ReceiverHWImpl::Pimpl::open() {
  */
 
 void ReceiverHWImpl::Pimpl::set( const ReceiverSettings& settings ) {
-	n_read = settings.n_read;
 
-	if( settings.direct_sampling )
-		setDirectSampling( settings.direct_sampling );
+	if( n_read == 0 ) {
+		n_read = settings.n_read;
 
-	setSampleRate( settings.rfSettings.sampleFreq );
+		if( settings.direct_sampling )
+			setDirectSampling( settings.direct_sampling );
 
-	setCenterFreq( settings.rfSettings.centralFreq );
+		setSampleRate( settings.rfSettings.sampleFreq );
 
-	if( 0 == settings.rfSettings.gain ) {
-		setAutoGain();
-	} else {
-		auto gain = nearestGain( settings.rfSettings.gain );
-		setGain( gain );
+		setCenterFreq( settings.rfSettings.centralFreq );
+
+		if( 0 == settings.rfSettings.gain ) {
+			setAutoGain();
+		} else {
+			auto gain = nearestGain( settings.rfSettings.gain );
+			setGain( gain );
+		}
+
+		setPpm( settings.rfSettings.ppm_error );
+
+		setAgcMode( settings.rfSettings.agcMode );
 	}
-
-	setPpm( settings.rfSettings.ppm_error );
-
-	setAgcMode( settings.rfSettings.agcMode );
 }
 
 /**
@@ -165,7 +168,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
 		return -1;
 	}
 	std::cerr << "Found " << device_count << " device(s):\n";
-	for( int i = 0; i < device_count; i++ ) {
+	for( unsigned i = 0; i < device_count; i++ ) {
 		if( rtlsdr_get_device_usb_strings( i, vendor, product, serial ) == 0 ) {
 			std::cerr << i << ": " << vendor << ", " << product << ", " << serial << "\n";
 		} else {
@@ -175,12 +178,12 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
 
 	/* does string look like raw id number */
 	device = ( int )strtol( s, &s2, 0 );
-	if( s2[ 0 ] == '\0' && device >= 0 && device < device_count ) {
+	if( s2[ 0 ] == '\0' && device >= 0 && device < ( int )device_count ) {
 		std::cerr << "Using device " << device << ": " << rtlsdr_get_device_name( ( uint32_t )device ) << "\n";
 		return device;
 	}
 	/* does string exact match a serial */
-	for( int i = 0; i < device_count; i++ ) {
+	for( unsigned i = 0; i < device_count; i++ ) {
 		rtlsdr_get_device_usb_strings( i, vendor, product, serial );
 		if( strcmp( s, serial ) != 0 ) {
 			continue;
@@ -190,7 +193,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
 		return device;
 	}
 	/* does string prefix match a serial */
-	for( int i = 0; i < device_count; i++ ) {
+	for( unsigned i = 0; i < device_count; i++ ) {
 		rtlsdr_get_device_usb_strings( i, vendor, product, serial );
 		if( strncmp( s, serial, strlen( s ) ) != 0 ) {
 			continue;
@@ -200,7 +203,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
 		return device;
 	}
 	/* does string suffix match a serial */
-	for( int i = 0; i < device_count; i++ ) {
+	for( unsigned i = 0; i < device_count; i++ ) {
 		rtlsdr_get_device_usb_strings( i, vendor, product, serial );
 		offset = strlen( serial ) - strlen( s );
 		if( offset < 0 ) {
@@ -237,7 +240,7 @@ int ReceiverHWImpl::Pimpl::setSampleRate( uint32_t samp_rate ) {
 	if( r < 0 )
 		std::cerr << "WARNING: Failed to set sample rate.\n";
 	else
-		std::cerr << "Sampling at " << samp_rate << "\n";
+		std::cerr << "Sampling at " << rtlsdr_get_sample_rate( dev ) << "\n";
 	return r;
 }
 

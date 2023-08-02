@@ -4,6 +4,7 @@ project(receiver LANGUAGES CXX C)
 
 include(GenerateExportHeader)
 #list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+add_compile_options(-w)
 
 if(NOT ${LIB_INSTALL_DIR})
    set(${LIB_INSTALL_DIR} lib)
