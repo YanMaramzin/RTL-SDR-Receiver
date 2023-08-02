@@ -8,6 +8,8 @@ using namespace std;
 int main() {
 
 
+// real complex and spectrum is working
+// fake complex and spectrum is working
 
     auto recImpl = ReceiverWrapper::getReceiverByName( "hw" );
     uint32_t centralFreq = 88e6;
@@ -15,15 +17,16 @@ int main() {
     RfSettings sett { centralFreq, sampleFreq, 400 };
 
     ReceiverSettings recset;
-    recset.sampleCount = ( uint32_t )100;
+    recset.sampleCount = ( uint32_t )1000; // to avoid errors set this 1000 or higher
     recset.rfSettings = sett;
     BaseSettings* rp = &recset;
     recImpl->setSettings( rp );
 
-    std::vector< Complex< uint8_t > > Buf;
-    recImpl->getComplex( rp, Buf );
+// std::vector< Complex< uint8_t > > Buf;
+// recImpl->getComplex( rp, Buf );
 
-
+    std::vector< Complex< double > > SpBuf;
+    recImpl->getSpectrum( rp, SpBuf );
 
 // uint32_t N = Buf.size();
 // std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
@@ -34,25 +37,25 @@ int main() {
 // fileOut.close();
 
 
-    sinParams sin1 { 5, 10 };
-    sinParams sin2 { 2, 20 };
+// sinParams sin1 { 5, 10 };
+// sinParams sin2 { 2, 20 };
 
-    auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
+// auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
 
 
-    fakeParams fakeset;
-    fakeset.sampleCount = 20;
-    fakeset.fd = 1600;
-    fakeset.noiseLVL = 1;
+// fakeParams fakeset;
+// fakeset.sampleCount = 20;
+// fakeset.fd = 1600;
+// fakeset.noiseLVL = 1;
 
-    fakeset.sinPar = { sin1, sin2 };
+// fakeset.sinPar = { sin1, sin2 };
 
-    BaseSettings* fp = &fakeset;
-    fakeImpl->setSettings( fp );
-
+// BaseSettings* fp = &fakeset;
+// fakeImpl->setSettings( fp );
 
 // std::vector< Complex< uint8_t > > Buf2;
 // fakeImpl->getComplex( fp, Buf2 );
+
 // std::vector< Complex< double > > SpecBuf;
 // fakeImpl->getSpectrum( fp, SpecBuf );
 

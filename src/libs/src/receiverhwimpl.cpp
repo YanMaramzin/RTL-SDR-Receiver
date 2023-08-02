@@ -73,7 +73,7 @@ void ReceiverHWImpl::setSettings(  BaseSettings* sett ) {
     ReceiverSettings* realset =  dynamic_cast<  ReceiverSettings* >( sett );
 
     m_d->set( *realset );
-    int y = 10;
+
 
 }
 

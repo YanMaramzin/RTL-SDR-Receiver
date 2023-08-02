@@ -11,10 +11,7 @@ FakeReceiver::~FakeReceiver() {
     // delete f_p;
 }
 
-// void FakeReceiver::set(  fakeParams* fakeset ) {
 
-// this->f_p  = fakeset;
-// }
 
 
 void FakeReceiver::setSettings( BaseSettings* settings ) {
