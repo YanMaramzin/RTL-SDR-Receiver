@@ -1,0 +1,134 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/libs/librtlsdr/src/libconvenience_static.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_compile_options",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"src/libs/librtlsdr/src/CMakeLists.txt",
+			"src/libs/CMakeLists.txt",
+			"src/libs/librtlsdr/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 105,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 2
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 130,
+				"parent" : 4
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g   -Wall -Wextra -Wno-unused-parameter -Wno-unused -Wsign-compare -Wdeclaration-after-statement -fvisibility=hidden"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-w"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/home/ann/WORK/work_qt/radio_receiver/src/libs/librtlsdr/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/usr/include/libusb-1.0"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/librtlsdr/src"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"id" : "convenience_static::@2563e7e451d1dd2e11f6",
+	"name" : "convenience_static",
+	"nameOnDisk" : "libconvenience_static.a",
+	"paths" : 
+	{
+		"build" : "src/libs/librtlsdr/src",
+		"source" : "src/libs/librtlsdr/src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/libs/librtlsdr/src/convenience/rtl_convenience.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/libs/librtlsdr/src/convenience/convenience.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/libs/librtlsdr/src/convenience/wavewrite.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

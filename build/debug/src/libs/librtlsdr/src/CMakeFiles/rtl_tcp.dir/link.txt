@@ -1,0 +1,1 @@
+/usr/bin/afl-gcc -g CMakeFiles/rtl_tcp.dir/rtl_tcp.c.o CMakeFiles/rtl_tcp.dir/controlThread.c.o -o rtl_tcp  -Wl,-rpath,/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/librtlsdr/src: librtlsdr.so.0.8git libconvenience_static.a /usr/lib/x86_64-linux-gnu/libusb-1.0.so -lpthread 

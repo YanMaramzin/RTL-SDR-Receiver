@@ -1,0 +1,353 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.7"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "src"
+				},
+				{
+					"build" : "src/libs",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.libs-Debug-69eb960bd520164871cf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.7"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "src/libs",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/libs/librtlsdr",
+					"childIndexes" : 
+					[
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.libs.librtlsdr-Debug-32f8dce84519a220297c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "src/libs/librtlsdr",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "src/libs/librtlsdr/include",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.libs.librtlsdr.include-Debug-755be957549ff7e72d29.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "src/libs/librtlsdr/include"
+				},
+				{
+					"build" : "src/libs/librtlsdr/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.libs.librtlsdr.src-Debug-4a5602774b76062fd053.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "src/libs/librtlsdr/src",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "radio_receiver",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "sdr-xml",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "receiver",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4,
+						5
+					],
+					"name" : "rtlsdr",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "convenience_static::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-convenience_static-Debug-ba8a1483b2e93c17d72f.json",
+					"name" : "convenience_static",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "radio_receiver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-radio_receiver-Debug-5480481cb9f313225250.json",
+					"name" : "radio_receiver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "receiver::@3b40b47697c99344f069",
+					"jsonFile" : "target-receiver-Debug-544c04985b1f26b35be3.json",
+					"name" : "receiver",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_adsb::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_adsb-Debug-45ff95673c1a32532cec.json",
+					"name" : "rtl_adsb",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_biast::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_biast-Debug-bedb31b879e98a61d8c2.json",
+					"name" : "rtl_biast",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_eeprom::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_eeprom-Debug-c56d11f64f5b63894ed5.json",
+					"name" : "rtl_eeprom",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_fm::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_fm-Debug-75b19c8d0d37e522e5f0.json",
+					"name" : "rtl_fm",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_ir::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_ir-Debug-38db4db7c173815e612e.json",
+					"name" : "rtl_ir",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_power::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_power-Debug-de76bb430bf148ab32b3.json",
+					"name" : "rtl_power",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_raw2wav::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_raw2wav-Debug-30c9e7efe438dfb2c140.json",
+					"name" : "rtl_raw2wav",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_sdr::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_sdr-Debug-65a1844f49056c20a558.json",
+					"name" : "rtl_sdr",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_tcp::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_tcp-Debug-f8aef5ef69ad8c95dac3.json",
+					"name" : "rtl_tcp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_test::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_test-Debug-000a416eefee51d542c4.json",
+					"name" : "rtl_test",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_udp::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_udp-Debug-3414f6b95417b8384c91.json",
+					"name" : "rtl_udp",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_wavestat::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_wavestat-Debug-aaaf880d1f062f348e5e.json",
+					"name" : "rtl_wavestat",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtl_wavestream::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtl_wavestream-Debug-3ee7147ef9b7b8b4604c.json",
+					"name" : "rtl_wavestream",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtlsdr_shared::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtlsdr_shared-Debug-003266c3652129c1cc5d.json",
+					"name" : "rtlsdr_shared",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rtlsdr_static::@2563e7e451d1dd2e11f6",
+					"jsonFile" : "target-rtlsdr_static-Debug-5540b082241b99002986.json",
+					"name" : "rtlsdr_static",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "uninstall::@6c19487eda1a255bdd49",
+					"jsonFile" : "target-uninstall-Debug-b5e811f1d21624e603c0.json",
+					"name" : "uninstall",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ann/WORK/work_qt/radio_receiver/build/debug",
+		"source" : "/home/ann/WORK/work_qt/radio_receiver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

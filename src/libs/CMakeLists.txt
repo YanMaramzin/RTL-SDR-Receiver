@@ -4,6 +4,7 @@ project(receiver LANGUAGES CXX C)
 
 include(GenerateExportHeader)
 #list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+add_compile_options(-w)
 
 if(NOT ${LIB_INSTALL_DIR})
    set(${LIB_INSTALL_DIR} lib)
@@ -30,30 +31,33 @@ add_library(${PROJECT_NAME} SHARED
     src/fft.h
     src/fft.cpp
     src/gen_sin.h
-    src/gen_sin.cpp
+
     src/gen_noise.h
-    src/gen_noise.cpp
+
     src/receiverhwimpl.h
     src/receiverhwimpl.cpp
     src/receiversoftimpl.h
     src/receiversoftimpl.cpp
     src/receiverwrapper.cpp
-    share/rtl-sdr.h
-    share/librtlsdr.c
-    share/reg_field.h
-    share/rtl-sdr_export.h
-    share/rtlsdr_i2c.h
-    share/tuner_e4k.h
-    share/tuner_e4k.c
-    share/tuner_fc0012.h
-    share/tuner_fc0012.c
-    share/tuner_fc0013.h
-    share/tuner_fc0013.c
-    share/tuner_fc2580.h
-    share/tuner_fc2580.c
-    share/tuner_r82xx.h
-    share/tuner_r82xx.c
+    #    share/rtl-sdr.h
+    #    share/librtlsdr.c
+    #    share/reg_field.h
+    #    share/rtl-sdr_export.h
+    #    share/rtlsdr_i2c.h
+    #    share/tuner_e4k.h
+    #    share/tuner_e4k.c
+    #    share/tuner_fc0012.h
+    #    share/tuner_fc0012.c
+    #    share/tuner_fc0013.h
+    #    share/tuner_fc0013.c
+    #    share/tuner_fc2580.h
+    #    share/tuner_fc2580.c
+    #    share/tuner_r82xx.h
+    #    share/tuner_r82xx.c
 )
+
+
+add_subdirectory(librtlsdr)
 
 generate_export_header(${PROJECT_NAME})
 
@@ -70,3 +74,4 @@ PRIVATE
 
 target_link_libraries(${PROJECT_NAME} ${LIBUSB_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} fftw3)
+target_link_libraries(${PROJECT_NAME} rtlsdr)

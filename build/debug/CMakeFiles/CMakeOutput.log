@@ -15,10 +15,10 @@ The CXX compiler identification is GNU, found in "/home/ann/WORK/work_qt/radio_r
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d06d7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d06d7.dir/build.make CMakeFiles/cmTC_d06d7.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5652f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5652f.dir/build.make CMakeFiles/cmTC_5652f.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/afl-g++   -v -o CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+Building CXX object CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/afl-g++   -v -o CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=g++
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -28,8 +28,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.3.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) 
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt; -D __AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len) -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d06d7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccLBPeOX.s
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt; -D __AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len) -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5652f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccmCWDAP.s
 GNU C++17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -53,15 +53,15 @@ GNU C++17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 2b9b53ff7f3a6952e2fe60119c16be53
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/'
- /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLBPeOX.s
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/'
+ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmCWDAP.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.'
-Linking CXX executable cmTC_d06d7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d06d7.dir/link.txt --verbose=1
-/usr/bin/afl-g++  -v CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d06d7 
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_5652f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5652f.dir/link.txt --verbose=1
+/usr/bin/afl-g++  -v CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5652f 
 Using built-in specs.
 COLLECT_GCC=g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -74,9 +74,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) 
 COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_d06d7' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d06d7.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgLvXIb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d06d7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_d06d7' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d06d7.'
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_5652f' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5652f.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccd24puZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5652f /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_5652f' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;extern "C" void __afl_coverage_discard();extern "C" void __afl_coverage_skip();extern "C" void __afl_coverage_on();extern "C" void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5652f.'
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -106,10 +106,10 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d06d7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d06d7.dir/build.make CMakeFiles/cmTC_d06d7.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5652f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5652f.dir/build.make CMakeFiles/cmTC_5652f.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/afl-g++   -v -o CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Building CXX object CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/afl-g++   -v -o CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=g++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -119,7 +119,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -138,7 +138,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/']
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
@@ -158,7 +158,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d06d7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccLBPeOX.s]
+  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5652f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccmCWDAP.s]
   ignore line: [GNU C++17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -182,7 +182,7 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 2b9b53ff7f3a6952e2fe60119c16be53]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -201,12 +201,12 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/']
-  ignore line: [ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLBPeOX.s]
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/']
+  ignore line: [ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmCWDAP.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -225,10 +225,10 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.']
-  ignore line: [Linking CXX executable cmTC_d06d7]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d06d7.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/afl-g++  -v CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d06d7 ]
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_5652f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5652f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/afl-g++  -v CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5652f ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=g++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -241,7 +241,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) ]
   ignore line: [COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_d06d7' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_5652f' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -260,13 +260,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d06d7.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgLvXIb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d06d7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [ } while (0)' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5652f.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccd24puZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5652f /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccgLvXIb.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccd24puZ.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -284,7 +284,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d06d7] ==> ignore
+    arg [cmTC_5652f] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -297,7 +297,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_d06d7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_5652f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -341,10 +341,10 @@ The C compiler identification is GNU, found in "/home/ann/WORK/work_qt/radio_rec
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aa94d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aa94d.dir/build.make CMakeFiles/cmTC_aa94d.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9e539/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9e539.dir/build.make CMakeFiles/cmTC_9e539.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o
-/usr/bin/afl-gcc   -v -o CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+Building C object CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o
+/usr/bin/afl-gcc   -v -o CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=gcc
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -354,8 +354,8 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.3.0-1ubuntu1~2
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) 
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt; -D __AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len) -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_aa94d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc2su8O4.s
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt; -D __AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off(); -D __AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1; -D __AFL_COVERAGE_ON()=__afl_coverage_on() -D __AFL_COVERAGE_OFF()=__afl_coverage_off() -D __AFL_COVERAGE_DISCARD()=__afl_coverage_discard() -D __AFL_COVERAGE_SKIP()=__afl_coverage_skip() -D __AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr) -D __AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len) -D __AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); }) -D __AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_9e539.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccfulIgq.s
 GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)
 	compiled by GNU C version 11.3.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
 
@@ -375,15 +375,15 @@ GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: e13e2dc98bfa673227c4000e476a9388
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/'
- /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o /tmp/cc2su8O4.s
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/'
+ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o /tmp/ccfulIgq.s
 GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
 COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.'
-Linking C executable cmTC_aa94d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa94d.dir/link.txt --verbose=1
-/usr/bin/afl-gcc  -v CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -o cmTC_aa94d 
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_9e539
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e539.dir/link.txt --verbose=1
+/usr/bin/afl-gcc  -v CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -o cmTC_9e539 
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -396,9 +396,9 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) 
 COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_aa94d' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_aa94d.'
- /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccreRzkd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_aa94d /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_aa94d' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_aa94d.'
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_9e539' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e539.'
+ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYORG2b.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9e539 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_9e539' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1;extern unsigned int *__afl_fuzz_len;extern unsigned char *__afl_fuzz_ptr;unsigned char __afl_fuzz_alt[1048576];unsigned char *__afl_fuzz_alt_ptr = __afl_fuzz_alt;' '-D' '__AFL_COVERAGE()=int __afl_selective_coverage = 1;void __afl_coverage_discard();void __afl_coverage_skip();void __afl_coverage_on();void __afl_coverage_off();' '-D' '__AFL_COVERAGE_START_OFF()=int __afl_selective_coverage_start_off = 1;' '-D' '__AFL_COVERAGE_ON()=__afl_coverage_on()' '-D' '__AFL_COVERAGE_OFF()=__afl_coverage_off()' '-D' '__AFL_COVERAGE_DISCARD()=__afl_coverage_discard()' '-D' '__AFL_COVERAGE_SKIP()=__afl_coverage_skip()' '-D' '__AFL_FUZZ_TESTCASE_BUF=(__afl_fuzz_ptr ? __afl_fuzz_ptr : __afl_fuzz_alt_ptr)' '-D' '__AFL_FUZZ_TESTCASE_LEN=(__afl_fuzz_ptr ? *__afl_fuzz_len : (*__afl_fuzz_len = read(0, __afl_fuzz_alt_ptr, 1048576)) == 0xffffffff ? 0 : *__afl_fuzz_len)' '-D' '__AFL_LOOP(_A)=({ static volatile char *_B __attribute__((used));  _B = (char*)"##SIG_AFL_PERSISTENT##"; __attribute__((visibility("default"))) int _L(unsigned int) __asm__("__afl_persistent_loop"); _L(_A); })' '-D' '__AFL_INIT()=do { static volatile char *_A __attribute__((used));  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"; __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init"); _I(); } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e539.'
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -422,10 +422,10 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_aa94d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aa94d.dir/build.make CMakeFiles/cmTC_aa94d.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9e539/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9e539.dir/build.make CMakeFiles/cmTC_9e539.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/afl-gcc   -v -o CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [Building C object CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/afl-gcc   -v -o CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=gcc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -435,7 +435,7 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -454,7 +454,7 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/']
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/']
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -v -imultiarch x86_64-linux-gnu -D __AFL_HAVE_MANUAL_CONTROL=1 -D __AFL_COMPILER=1 -D FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1 -D __AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
@@ -474,7 +474,7 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_aa94d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc2su8O4.s]
+  ignore line: [ } while (0) /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_9e539.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -g -O3 -version -funroll-loops -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccfulIgq.s]
   ignore line: [GNU C17 (Ubuntu 11.3.0-1ubuntu1~22.04.1) version 11.3.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 11.3.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
   ignore line: []
@@ -494,7 +494,7 @@ Parsed C implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: e13e2dc98bfa673227c4000e476a9388]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -513,12 +513,12 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/']
-  ignore line: [ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o /tmp/cc2su8O4.s]
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/']
+  ignore line: [ /usr/bin/../lib/afl/as -v --gdwarf-5 --64 -o CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o /tmp/ccfulIgq.s]
   ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
   ignore line: [COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o' '-c' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -537,10 +537,10 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.']
-  ignore line: [Linking C executable cmTC_aa94d]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa94d.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/afl-gcc  -v CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -o cmTC_aa94d ]
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_9e539]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e539.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/afl-gcc  -v CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -o cmTC_9e539 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=gcc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -553,7 +553,7 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04.1) ]
   ignore line: [COMPILER_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/bin/../lib/afl/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_aa94d' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
+  ignore line: [COLLECT_GCC_OPTIONS='-B' '/usr/bin/../lib/afl' '-v' '-o' 'cmTC_9e539' '-g' '-O3' '-funroll-loops' '-D' '__AFL_HAVE_MANUAL_CONTROL=1' '-D' '__AFL_COMPILER=1' '-D' 'FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION=1' '-D' '__AFL_FUZZ_INIT()=int __afl_sharedmem_fuzzing = 1]
   ignore line: [extern unsigned int *__afl_fuzz_len]
   ignore line: [extern unsigned char *__afl_fuzz_ptr]
   ignore line: [unsigned char __afl_fuzz_alt[1048576]]
@@ -572,13 +572,13 @@ Parsed C implicit link information from above output:
   ignore line: [  _A = (char*)"##SIG_AFL_DEFER_FORKSRV##"]
   ignore line: [ __attribute__((visibility("default"))) void _I(void) __asm__("__afl_manual_init")]
   ignore line: [ _I()]
-  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_aa94d.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccreRzkd.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_aa94d /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [ } while (0)' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9e539.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYORG2b.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9e539 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/afl -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccreRzkd.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYORG2b.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -596,7 +596,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_aa94d] ==> ignore
+    arg [cmTC_9e539] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -609,7 +609,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
-    arg [CMakeFiles/cmTC_aa94d.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_9e539.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -644,13 +644,13 @@ Parsed C implicit link information from above output:
 Determining if files pthread.h exist passed with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_7aac0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7aac0.dir/build.make CMakeFiles/cmTC_7aac0.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0a927/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0a927.dir/build.make CMakeFiles/cmTC_0a927.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7aac0.dir/CMAKE_HAVE_PTHREAD_H.c.o
-/usr/bin/afl-gcc    -o CMakeFiles/cmTC_7aac0.dir/CMAKE_HAVE_PTHREAD_H.c.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CheckIncludeFiles/CMAKE_HAVE_PTHREAD_H.c
-Linking C executable cmTC_7aac0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7aac0.dir/link.txt --verbose=1
-/usr/bin/afl-gcc CMakeFiles/cmTC_7aac0.dir/CMAKE_HAVE_PTHREAD_H.c.o -o cmTC_7aac0 
+Building C object CMakeFiles/cmTC_0a927.dir/CMAKE_HAVE_PTHREAD_H.c.o
+/usr/bin/afl-gcc    -o CMakeFiles/cmTC_0a927.dir/CMAKE_HAVE_PTHREAD_H.c.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CheckIncludeFiles/CMAKE_HAVE_PTHREAD_H.c
+Linking C executable cmTC_0a927
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a927.dir/link.txt --verbose=1
+/usr/bin/afl-gcc CMakeFiles/cmTC_0a927.dir/CMAKE_HAVE_PTHREAD_H.c.o -o cmTC_0a927 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -658,13 +658,13 @@ gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/C
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5c361/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5c361.dir/build.make CMakeFiles/cmTC_5c361.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a3397/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a3397.dir/build.make CMakeFiles/cmTC_a3397.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5c361.dir/CheckFunctionExists.c.o
-/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_5c361.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5c361
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c361.dir/link.txt --verbose=1
-/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_5c361.dir/CheckFunctionExists.c.o -o cmTC_5c361  -lpthread 
+Building C object CMakeFiles/cmTC_a3397.dir/CheckFunctionExists.c.o
+/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_a3397.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a3397
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3397.dir/link.txt --verbose=1
+/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_a3397.dir/CheckFunctionExists.c.o -o cmTC_a3397  -lpthread 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -672,13 +672,13 @@ gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/C
 Determining if the function libusb_handle_events_timeout_completed exists passed with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5706b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5706b.dir/build.make CMakeFiles/cmTC_5706b.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4516e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4516e.dir/build.make CMakeFiles/cmTC_4516e.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5706b.dir/CheckFunctionExists.c.o
-/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=libusb_handle_events_timeout_completed -o CMakeFiles/cmTC_5706b.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5706b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5706b.dir/link.txt --verbose=1
-/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=libusb_handle_events_timeout_completed CMakeFiles/cmTC_5706b.dir/CheckFunctionExists.c.o -o cmTC_5706b  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
+Building C object CMakeFiles/cmTC_4516e.dir/CheckFunctionExists.c.o
+/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=libusb_handle_events_timeout_completed -o CMakeFiles/cmTC_4516e.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4516e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4516e.dir/link.txt --verbose=1
+/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=libusb_handle_events_timeout_completed CMakeFiles/cmTC_4516e.dir/CheckFunctionExists.c.o -o cmTC_4516e  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -686,13 +686,13 @@ gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/C
 Determining if the function libusb_error_name exists passed with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_89775/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_89775.dir/build.make CMakeFiles/cmTC_89775.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_152b5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_152b5.dir/build.make CMakeFiles/cmTC_152b5.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_89775.dir/CheckFunctionExists.c.o
-/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=libusb_error_name -o CMakeFiles/cmTC_89775.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
-Linking C executable cmTC_89775
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89775.dir/link.txt --verbose=1
-/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=libusb_error_name CMakeFiles/cmTC_89775.dir/CheckFunctionExists.c.o -o cmTC_89775  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
+Building C object CMakeFiles/cmTC_152b5.dir/CheckFunctionExists.c.o
+/usr/bin/afl-gcc   -DCHECK_FUNCTION_EXISTS=libusb_error_name -o CMakeFiles/cmTC_152b5.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_152b5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_152b5.dir/link.txt --verbose=1
+/usr/bin/afl-gcc  -DCHECK_FUNCTION_EXISTS=libusb_error_name CMakeFiles/cmTC_152b5.dir/CheckFunctionExists.c.o -o cmTC_152b5  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -700,13 +700,13 @@ gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/C
 Performing C++ SOURCE FILE Test COMPILER_HAS_HIDDEN_VISIBILITY succeeded with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_5fa79/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5fa79.dir/build.make CMakeFiles/cmTC_5fa79.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9a170/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9a170.dir/build.make CMakeFiles/cmTC_9a170.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_5fa79.dir/src.cxx.o
-/usr/bin/afl-g++ -DCOMPILER_HAS_HIDDEN_VISIBILITY  -fvisibility=hidden -o CMakeFiles/cmTC_5fa79.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_5fa79
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fa79.dir/link.txt --verbose=1
-/usr/bin/afl-g++ CMakeFiles/cmTC_5fa79.dir/src.cxx.o -o cmTC_5fa79  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
+Building CXX object CMakeFiles/cmTC_9a170.dir/src.cxx.o
+/usr/bin/afl-g++ -DCOMPILER_HAS_HIDDEN_VISIBILITY  -fvisibility=hidden -o CMakeFiles/cmTC_9a170.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9a170
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a170.dir/link.txt --verbose=1
+/usr/bin/afl-g++ CMakeFiles/cmTC_9a170.dir/src.cxx.o -o cmTC_9a170  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -715,13 +715,13 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY succeeded with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_0de9f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0de9f.dir/build.make CMakeFiles/cmTC_0de9f.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9eb65/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9eb65.dir/build.make CMakeFiles/cmTC_9eb65.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0de9f.dir/src.cxx.o
-/usr/bin/afl-g++ -DCOMPILER_HAS_HIDDEN_INLINE_VISIBILITY  -fvisibility-inlines-hidden -o CMakeFiles/cmTC_0de9f.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
-Linking CXX executable cmTC_0de9f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0de9f.dir/link.txt --verbose=1
-/usr/bin/afl-g++ CMakeFiles/cmTC_0de9f.dir/src.cxx.o -o cmTC_0de9f  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
+Building CXX object CMakeFiles/cmTC_9eb65.dir/src.cxx.o
+/usr/bin/afl-g++ -DCOMPILER_HAS_HIDDEN_INLINE_VISIBILITY  -fvisibility-inlines-hidden -o CMakeFiles/cmTC_9eb65.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9eb65
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9eb65.dir/link.txt --verbose=1
+/usr/bin/afl-g++ CMakeFiles/cmTC_9eb65.dir/src.cxx.o -o cmTC_9eb65  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 
@@ -730,10 +730,10 @@ int main() { return 0; }
 Performing C++ SOURCE FILE Test COMPILER_HAS_DEPRECATED_ATTR succeeded with the following output:
 Change Dir: /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_4ae96/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ae96.dir/build.make CMakeFiles/cmTC_4ae96.dir/build
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_db304/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_db304.dir/build.make CMakeFiles/cmTC_db304.dir/build
 gmake[1]: Entering directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4ae96.dir/src.cxx.o
-/usr/bin/afl-g++ -DCOMPILER_HAS_DEPRECATED_ATTR   -o CMakeFiles/cmTC_4ae96.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
+Building CXX object CMakeFiles/cmTC_db304.dir/src.cxx.o
+/usr/bin/afl-g++ -DCOMPILER_HAS_DEPRECATED_ATTR   -o CMakeFiles/cmTC_db304.dir/src.cxx.o -c /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx
 /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx: In function ‘int main()’:
 /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx:2:33: warning: ‘int somefunc()’ is deprecated [-Wdeprecated-declarations]
     2 |     int main() { return somefunc();}
@@ -741,9 +741,9 @@ Building CXX object CMakeFiles/cmTC_4ae96.dir/src.cxx.o
 /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp/src.cxx:1:37: note: declared here
     1 | __attribute__((__deprecated__)) int somefunc() { return 0; }
       |                                     ^~~~~~~~
-Linking CXX executable cmTC_4ae96
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ae96.dir/link.txt --verbose=1
-/usr/bin/afl-g++ CMakeFiles/cmTC_4ae96.dir/src.cxx.o -o cmTC_4ae96  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
+Linking CXX executable cmTC_db304
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db304.dir/link.txt --verbose=1
+/usr/bin/afl-g++ CMakeFiles/cmTC_db304.dir/src.cxx.o -o cmTC_db304  /usr/lib/x86_64-linux-gnu/libusb-1.0.so 
 gmake[1]: Leaving directory '/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles/CMakeTmp'
 
 

@@ -9,10 +9,9 @@
 #include "fft.h"
 
 struct ReceiverHWImpl::Pimpl {
-
     void set( const ReceiverSettings& settings );
     void open();
-    int n_read;
+    int n_read{ 0 };
     int dev_index { 0 };
     int dev_given { 0 };
     rtlsdr_dev_t* dev { nullptr };
@@ -78,29 +77,30 @@ void ReceiverHWImpl::setSettings(  BaseSettings* sett ) {
 }
 
 
-
-
-
 void ReceiverHWImpl::Pimpl::set( const ReceiverSettings& settings ) {
-    n_read = settings.n_read;
 
-    if( settings.direct_sampling )
-        setDirectSampling( settings.direct_sampling );
 
-    setSampleRate( settings.rfSettings.sampleFreq );
+    if( n_read == 0 ) {
+        n_read = settings.n_read;
 
-    setCenterFreq( settings.rfSettings.centralFreq );
+        if( settings.direct_sampling )
+            setDirectSampling( settings.direct_sampling );
 
-    if( 0 == settings.rfSettings.gain ) {
-        setAutoGain();
-    } else {
-        auto gain = nearestGain( settings.rfSettings.gain );
-        setGain( gain );
+        setSampleRate( settings.rfSettings.sampleFreq );
+
+        setCenterFreq( settings.rfSettings.centralFreq );
+
+        if( 0 == settings.rfSettings.gain ) {
+            setAutoGain();
+        } else {
+            auto gain = nearestGain( settings.rfSettings.gain );
+            setGain( gain );
+        }
+
+        setPpm( settings.rfSettings.ppm_error );
+
+        setAgcMode( settings.rfSettings.agcMode );
     }
-
-    setPpm( settings.rfSettings.ppm_error );
-
-    setAgcMode( settings.rfSettings.agcMode );
 }
 
 /**
@@ -121,10 +121,10 @@ bool ReceiverHWImpl::getComplex( const BaseSettings* settings, ReceiverHWImpl::B
 
     const ReceiverSettings* realset =  dynamic_cast< const ReceiverSettings* >( settings );
     m_d->set( *realset );
-    auto size = realset->sampleCount;
+    auto size = realset->sampleCount; //
     size = m_d->roundPowerTwo( size );
     out.resize( size );
-    auto bytesToRead = 2 * realset->sampleCount;
+    auto bytesToRead = 2 * realset->sampleCount; //
     bytesToRead = m_d->roundPowerTwo( bytesToRead );
     m_d->resetBuffer();
     auto result = rtlsdr_read_sync( m_d->dev, out.data(), bytesToRead, &( m_d->n_read ) );
@@ -137,10 +137,8 @@ bool ReceiverHWImpl::getComplex( const BaseSettings* settings, ReceiverHWImpl::B
 
 bool ReceiverHWImpl::getComplex(  Buffer& out ) {
 
-
 }
 void ReceiverHWImpl::getSpectrum(  SpectBuff& out ) {
-
 
 }
 

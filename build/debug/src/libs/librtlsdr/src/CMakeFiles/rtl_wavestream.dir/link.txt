@@ -1,0 +1,1 @@
+/usr/bin/afl-gcc -g CMakeFiles/rtl_wavestream.dir/rtl_wavestream.c.o CMakeFiles/rtl_wavestream.dir/convenience/convenience.c.o CMakeFiles/rtl_wavestream.dir/convenience/waveread.c.o -o rtl_wavestream  -lm 

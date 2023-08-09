@@ -1,0 +1,1 @@
+/usr/bin/afl-gcc -g CMakeFiles/rtl_eeprom.dir/rtl_eeprom.c.o -o rtl_eeprom  -Wl,-rpath,/home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs/librtlsdr/src: librtlsdr.so.0.8git libconvenience_static.a /usr/lib/x86_64-linux-gnu/libusb-1.0.so -lpthread 

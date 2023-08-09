@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs//CMakeFiles/progress.marks
@@ -130,150 +175,6 @@ receiver/fast:
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/build
 .PHONY : receiver/fast
 
-share/librtlsdr.o: share/librtlsdr.c.o
-.PHONY : share/librtlsdr.o
-
-# target to build an object file
-share/librtlsdr.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o
-.PHONY : share/librtlsdr.c.o
-
-share/librtlsdr.i: share/librtlsdr.c.i
-.PHONY : share/librtlsdr.i
-
-# target to preprocess a source file
-share/librtlsdr.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.i
-.PHONY : share/librtlsdr.c.i
-
-share/librtlsdr.s: share/librtlsdr.c.s
-.PHONY : share/librtlsdr.s
-
-# target to generate assembly for a file
-share/librtlsdr.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.s
-.PHONY : share/librtlsdr.c.s
-
-share/tuner_e4k.o: share/tuner_e4k.c.o
-.PHONY : share/tuner_e4k.o
-
-# target to build an object file
-share/tuner_e4k.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o
-.PHONY : share/tuner_e4k.c.o
-
-share/tuner_e4k.i: share/tuner_e4k.c.i
-.PHONY : share/tuner_e4k.i
-
-# target to preprocess a source file
-share/tuner_e4k.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.i
-.PHONY : share/tuner_e4k.c.i
-
-share/tuner_e4k.s: share/tuner_e4k.c.s
-.PHONY : share/tuner_e4k.s
-
-# target to generate assembly for a file
-share/tuner_e4k.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.s
-.PHONY : share/tuner_e4k.c.s
-
-share/tuner_fc0012.o: share/tuner_fc0012.c.o
-.PHONY : share/tuner_fc0012.o
-
-# target to build an object file
-share/tuner_fc0012.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o
-.PHONY : share/tuner_fc0012.c.o
-
-share/tuner_fc0012.i: share/tuner_fc0012.c.i
-.PHONY : share/tuner_fc0012.i
-
-# target to preprocess a source file
-share/tuner_fc0012.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.i
-.PHONY : share/tuner_fc0012.c.i
-
-share/tuner_fc0012.s: share/tuner_fc0012.c.s
-.PHONY : share/tuner_fc0012.s
-
-# target to generate assembly for a file
-share/tuner_fc0012.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.s
-.PHONY : share/tuner_fc0012.c.s
-
-share/tuner_fc0013.o: share/tuner_fc0013.c.o
-.PHONY : share/tuner_fc0013.o
-
-# target to build an object file
-share/tuner_fc0013.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o
-.PHONY : share/tuner_fc0013.c.o
-
-share/tuner_fc0013.i: share/tuner_fc0013.c.i
-.PHONY : share/tuner_fc0013.i
-
-# target to preprocess a source file
-share/tuner_fc0013.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.i
-.PHONY : share/tuner_fc0013.c.i
-
-share/tuner_fc0013.s: share/tuner_fc0013.c.s
-.PHONY : share/tuner_fc0013.s
-
-# target to generate assembly for a file
-share/tuner_fc0013.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.s
-.PHONY : share/tuner_fc0013.c.s
-
-share/tuner_fc2580.o: share/tuner_fc2580.c.o
-.PHONY : share/tuner_fc2580.o
-
-# target to build an object file
-share/tuner_fc2580.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o
-.PHONY : share/tuner_fc2580.c.o
-
-share/tuner_fc2580.i: share/tuner_fc2580.c.i
-.PHONY : share/tuner_fc2580.i
-
-# target to preprocess a source file
-share/tuner_fc2580.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.i
-.PHONY : share/tuner_fc2580.c.i
-
-share/tuner_fc2580.s: share/tuner_fc2580.c.s
-.PHONY : share/tuner_fc2580.s
-
-# target to generate assembly for a file
-share/tuner_fc2580.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.s
-.PHONY : share/tuner_fc2580.c.s
-
-share/tuner_r82xx.o: share/tuner_r82xx.c.o
-.PHONY : share/tuner_r82xx.o
-
-# target to build an object file
-share/tuner_r82xx.c.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o
-.PHONY : share/tuner_r82xx.c.o
-
-share/tuner_r82xx.i: share/tuner_r82xx.c.i
-.PHONY : share/tuner_r82xx.i
-
-# target to preprocess a source file
-share/tuner_r82xx.c.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.i
-.PHONY : share/tuner_r82xx.c.i
-
-share/tuner_r82xx.s: share/tuner_r82xx.c.s
-.PHONY : share/tuner_r82xx.s
-
-# target to generate assembly for a file
-share/tuner_r82xx.c.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.s
-.PHONY : share/tuner_r82xx.c.s
-
 src/fft.o: src/fft.cpp.o
 .PHONY : src/fft.o
 
@@ -297,54 +198,6 @@ src/fft.s: src/fft.cpp.s
 src/fft.cpp.s:
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/fft.cpp.s
 .PHONY : src/fft.cpp.s
-
-src/gen_noise.o: src/gen_noise.cpp.o
-.PHONY : src/gen_noise.o
-
-# target to build an object file
-src/gen_noise.cpp.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o
-.PHONY : src/gen_noise.cpp.o
-
-src/gen_noise.i: src/gen_noise.cpp.i
-.PHONY : src/gen_noise.i
-
-# target to preprocess a source file
-src/gen_noise.cpp.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.i
-.PHONY : src/gen_noise.cpp.i
-
-src/gen_noise.s: src/gen_noise.cpp.s
-.PHONY : src/gen_noise.s
-
-# target to generate assembly for a file
-src/gen_noise.cpp.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.s
-.PHONY : src/gen_noise.cpp.s
-
-src/gen_sin.o: src/gen_sin.cpp.o
-.PHONY : src/gen_sin.o
-
-# target to build an object file
-src/gen_sin.cpp.o:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o
-.PHONY : src/gen_sin.cpp.o
-
-src/gen_sin.i: src/gen_sin.cpp.i
-.PHONY : src/gen_sin.i
-
-# target to preprocess a source file
-src/gen_sin.cpp.i:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.i
-.PHONY : src/gen_sin.cpp.i
-
-src/gen_sin.s: src/gen_sin.cpp.s
-.PHONY : src/gen_sin.s
-
-# target to generate assembly for a file
-src/gen_sin.cpp.s:
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug && $(MAKE) $(MAKESILENT) -f src/libs/CMakeFiles/receiver.dir/build.make src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.s
-.PHONY : src/gen_sin.cpp.s
 
 src/receiverhwimpl.o: src/receiverhwimpl.cpp.o
 .PHONY : src/receiverhwimpl.o
@@ -425,35 +278,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... receiver"
-	@echo "... share/librtlsdr.o"
-	@echo "... share/librtlsdr.i"
-	@echo "... share/librtlsdr.s"
-	@echo "... share/tuner_e4k.o"
-	@echo "... share/tuner_e4k.i"
-	@echo "... share/tuner_e4k.s"
-	@echo "... share/tuner_fc0012.o"
-	@echo "... share/tuner_fc0012.i"
-	@echo "... share/tuner_fc0012.s"
-	@echo "... share/tuner_fc0013.o"
-	@echo "... share/tuner_fc0013.i"
-	@echo "... share/tuner_fc0013.s"
-	@echo "... share/tuner_fc2580.o"
-	@echo "... share/tuner_fc2580.i"
-	@echo "... share/tuner_fc2580.s"
-	@echo "... share/tuner_r82xx.o"
-	@echo "... share/tuner_r82xx.i"
-	@echo "... share/tuner_r82xx.s"
 	@echo "... src/fft.o"
 	@echo "... src/fft.i"
 	@echo "... src/fft.s"
-	@echo "... src/gen_noise.o"
-	@echo "... src/gen_noise.i"
-	@echo "... src/gen_noise.s"
-	@echo "... src/gen_sin.o"
-	@echo "... src/gen_sin.i"
-	@echo "... src/gen_sin.s"
 	@echo "... src/receiverhwimpl.o"
 	@echo "... src/receiverhwimpl.i"
 	@echo "... src/receiverhwimpl.s"

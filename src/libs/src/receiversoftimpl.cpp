@@ -39,9 +39,9 @@ std::vector< Complex< Type > > FakeReceiver::GenSignal( const fakeParams* fakese
 bool FakeReceiver::getComplex( const BaseSettings* settings, Buffer& out ) {
 
     const fakeParams* fakeset =  dynamic_cast< const fakeParams* >( settings );
-    std::vector< Complex< uint8_t > > data = this->GenSignal< uint8_t >( fakeset );
     auto sizeBuff = fakeset->sampleCount;
     out.resize( sizeBuff );
+    std::vector< Complex< uint8_t > > data = this->GenSignal< uint8_t >( fakeset );
     for( uint64_t i = 0; i < fakeset->sampleCount; i++ ) {
         out[ i ] = data[ i ];
     }

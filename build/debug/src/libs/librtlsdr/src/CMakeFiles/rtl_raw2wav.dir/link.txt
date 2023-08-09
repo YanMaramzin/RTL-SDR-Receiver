@@ -1,0 +1,1 @@
+/usr/bin/afl-gcc -g CMakeFiles/rtl_raw2wav.dir/rtl_raw2wav.c.o CMakeFiles/rtl_raw2wav.dir/convenience/convenience.c.o CMakeFiles/rtl_raw2wav.dir/convenience/wavewrite.c.o -o rtl_raw2wav  -lm 

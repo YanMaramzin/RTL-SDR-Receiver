@@ -83,38 +83,10 @@ src/libs/CMakeFiles/receiver.dir/src/fft.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/receiver.dir/src/fft.cpp.s"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/src/fft.cpp -o CMakeFiles/receiver.dir/src/fft.cpp.s
 
-src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o: ../../src/libs/src/gen_sin.cpp
-src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o -MF CMakeFiles/receiver.dir/src/gen_sin.cpp.o.d -o CMakeFiles/receiver.dir/src/gen_sin.cpp.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_sin.cpp
-
-src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/receiver.dir/src/gen_sin.cpp.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_sin.cpp > CMakeFiles/receiver.dir/src/gen_sin.cpp.i
-
-src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/receiver.dir/src/gen_sin.cpp.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_sin.cpp -o CMakeFiles/receiver.dir/src/gen_sin.cpp.s
-
-src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o: ../../src/libs/src/gen_noise.cpp
-src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o -MF CMakeFiles/receiver.dir/src/gen_noise.cpp.o.d -o CMakeFiles/receiver.dir/src/gen_noise.cpp.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_noise.cpp
-
-src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/receiver.dir/src/gen_noise.cpp.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_noise.cpp > CMakeFiles/receiver.dir/src/gen_noise.cpp.i
-
-src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/receiver.dir/src/gen_noise.cpp.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/src/gen_noise.cpp -o CMakeFiles/receiver.dir/src/gen_noise.cpp.s
-
 src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o: src/libs/CMakeFiles/receiver.dir/flags.make
 src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o: ../../src/libs/src/receiverhwimpl.cpp
 src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o -MF CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o.d -o CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/src/receiverhwimpl.cpp
 
 src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.i: cmake_force
@@ -128,7 +100,7 @@ src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.s: cmake_force
 src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o: src/libs/CMakeFiles/receiver.dir/flags.make
 src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o: ../../src/libs/src/receiversoftimpl.cpp
 src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o -MF CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o.d -o CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/src/receiversoftimpl.cpp
 
 src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.i: cmake_force
@@ -142,7 +114,7 @@ src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.s: cmake_force
 src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o: src/libs/CMakeFiles/receiver.dir/flags.make
 src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o: ../../src/libs/src/receiverwrapper.cpp
 src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o -MF CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o.d -o CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/src/receiverwrapper.cpp
 
 src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.i: cmake_force
@@ -153,124 +125,24 @@ src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/receiver.dir/src/receiverwrapper.cpp.s"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/src/receiverwrapper.cpp -o CMakeFiles/receiver.dir/src/receiverwrapper.cpp.s
 
-src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o: ../../src/libs/share/librtlsdr.c
-src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o -MF CMakeFiles/receiver.dir/share/librtlsdr.c.o.d -o CMakeFiles/receiver.dir/share/librtlsdr.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/librtlsdr.c
-
-src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/librtlsdr.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/librtlsdr.c > CMakeFiles/receiver.dir/share/librtlsdr.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/librtlsdr.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/librtlsdr.c -o CMakeFiles/receiver.dir/share/librtlsdr.c.s
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o: ../../src/libs/share/tuner_e4k.c
-src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o -MF CMakeFiles/receiver.dir/share/tuner_e4k.c.o.d -o CMakeFiles/receiver.dir/share/tuner_e4k.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_e4k.c
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/tuner_e4k.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_e4k.c > CMakeFiles/receiver.dir/share/tuner_e4k.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/tuner_e4k.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_e4k.c -o CMakeFiles/receiver.dir/share/tuner_e4k.c.s
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o: ../../src/libs/share/tuner_fc0012.c
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o -MF CMakeFiles/receiver.dir/share/tuner_fc0012.c.o.d -o CMakeFiles/receiver.dir/share/tuner_fc0012.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0012.c
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/tuner_fc0012.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0012.c > CMakeFiles/receiver.dir/share/tuner_fc0012.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/tuner_fc0012.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0012.c -o CMakeFiles/receiver.dir/share/tuner_fc0012.c.s
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o: ../../src/libs/share/tuner_fc0013.c
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o -MF CMakeFiles/receiver.dir/share/tuner_fc0013.c.o.d -o CMakeFiles/receiver.dir/share/tuner_fc0013.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0013.c
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/tuner_fc0013.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0013.c > CMakeFiles/receiver.dir/share/tuner_fc0013.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/tuner_fc0013.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc0013.c -o CMakeFiles/receiver.dir/share/tuner_fc0013.c.s
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o: ../../src/libs/share/tuner_fc2580.c
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o -MF CMakeFiles/receiver.dir/share/tuner_fc2580.c.o.d -o CMakeFiles/receiver.dir/share/tuner_fc2580.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc2580.c
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/tuner_fc2580.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc2580.c > CMakeFiles/receiver.dir/share/tuner_fc2580.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/tuner_fc2580.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_fc2580.c -o CMakeFiles/receiver.dir/share/tuner_fc2580.c.s
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o: src/libs/CMakeFiles/receiver.dir/flags.make
-src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o: ../../src/libs/share/tuner_r82xx.c
-src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o: src/libs/CMakeFiles/receiver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o -MF CMakeFiles/receiver.dir/share/tuner_r82xx.c.o.d -o CMakeFiles/receiver.dir/share/tuner_r82xx.c.o -c /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_r82xx.c
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/receiver.dir/share/tuner_r82xx.c.i"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_r82xx.c > CMakeFiles/receiver.dir/share/tuner_r82xx.c.i
-
-src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/receiver.dir/share/tuner_r82xx.c.s"
-	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && /usr/bin/afl-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ann/WORK/work_qt/radio_receiver/src/libs/share/tuner_r82xx.c -o CMakeFiles/receiver.dir/share/tuner_r82xx.c.s
-
 # Object files for target receiver
 receiver_OBJECTS = \
 "CMakeFiles/receiver.dir/src/fft.cpp.o" \
-"CMakeFiles/receiver.dir/src/gen_sin.cpp.o" \
-"CMakeFiles/receiver.dir/src/gen_noise.cpp.o" \
 "CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o" \
 "CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o" \
-"CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o" \
-"CMakeFiles/receiver.dir/share/librtlsdr.c.o" \
-"CMakeFiles/receiver.dir/share/tuner_e4k.c.o" \
-"CMakeFiles/receiver.dir/share/tuner_fc0012.c.o" \
-"CMakeFiles/receiver.dir/share/tuner_fc0013.c.o" \
-"CMakeFiles/receiver.dir/share/tuner_fc2580.c.o" \
-"CMakeFiles/receiver.dir/share/tuner_r82xx.c.o"
+"CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o"
 
 # External object files for target receiver
 receiver_EXTERNAL_OBJECTS =
 
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/fft.cpp.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/gen_sin.cpp.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/gen_noise.cpp.o
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/librtlsdr.c.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/tuner_e4k.c.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/tuner_fc0012.c.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/tuner_fc0013.c.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/tuner_fc2580.c.o
-src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/share/tuner_r82xx.c.o
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/build.make
 src/libs/libreceiver.so: /usr/lib/x86_64-linux-gnu/libusb-1.0.so
 src/libs/libreceiver.so: src/libs/CMakeFiles/receiver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libreceiver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ann/WORK/work_qt/radio_receiver/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libreceiver.so"
 	cd /home/ann/WORK/work_qt/radio_receiver/build/debug/src/libs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/receiver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
