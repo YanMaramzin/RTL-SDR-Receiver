@@ -4,28 +4,32 @@
 #include <vector>
 
 using namespace std;
-// real complex and spectrum is working
-// fake: complex and spectrum writing in file and have 2nd version (wtout settings), complex
+
+// fake: complex and spectrum writing in file and have 2nd version (withtout settings)
+// real: complex and spectrum writing in file and have 2nd version (withtout settings)
 
 int main() {
 
 
-// auto recImpl = ReceiverWrapper::getReceiverByName( "hw" );
-// uint32_t centralFreq = 103.802e6;
-// uint32_t sampleFreq = 2.6e6;
-// RfSettings sett { centralFreq, sampleFreq, 400 };
+    auto reImpl = ReceiverWrapper::getReceiverByName( "hw" );
+    uint32_t centralFreq = 103.802e6;
+    uint32_t sampleFreq = 2.6e6;
+    RfSettings sett { centralFreq, sampleFreq, 400 };
 
-// ReceiverSettings recset;
-// recset.sampleCount = ( uint32_t )4194304; // must be 512 or higher
-// recset.rfSettings = sett;
-// BaseSettings* rp = &recset;
-// recImpl->setSettings( rp );
+    ReceiverSettings recset;
+    recset.sampleCount = ( uint32_t )512; // must be 512 or higher
+    recset.rfSettings = sett;
+    BaseSettings* rp = &recset;
+    reImpl->setSettings( rp );
 
 // std::vector< Complex< uint8_t > > Buf;
-// recImpl->getComplex( rp, Buf );
+// reImpl->getComplex(  Buf );
 
-// std::vector< Complex< double > > SpBuf;
-// recImpl->getSpectrum( rp, SpBuf );
+// std::vector< Complex< uint8_t > > Buf2;
+// reImpl->getComplex(  rp, Buf2 );
+
+    std::vector< Complex< double > > SpBuf;
+    reImpl->getSpectrum( SpBuf );
 
 // uint32_t N = Buf.size();
 // std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
@@ -37,34 +41,34 @@ int main() {
 // fileOut.close();
 
 
-    sinParams sin1 { 0, 10 };
-    // sinParams sin2 { 2, 20 };
+// sinParams sin1 { 0, 10 };
+// sinParams sin2 { 2, 20 };
 
-    auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
+// auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
 
 
-    fakeParams fakeset;
-    fakeset.fd = 1600;
-    fakeset.sampleCount = 1000;
-    fakeset.noiseLVL = 0;
+// fakeParams fakeset;
+// fakeset.fd = 1600;
+// fakeset.sampleCount = 1000;
+// fakeset.noiseLVL = 0;
 
-    fakeset.sinPar = { sin1 };
+// fakeset.sinPar = { sin1 };
 
-    BaseSettings* fp = &fakeset;
-    fakeImpl->setSettings( fp );
+// BaseSettings* fp = &fakeset;
+// fakeImpl->setSettings( fp );
 
-    std::vector< Complex< uint8_t > > Buf2;
-    fakeImpl->getComplex( fp, Buf2 );
+// std::vector< Complex< uint8_t > > Buf2;
+// fakeImpl->getComplex( fp, Buf2 );
 
-    std::vector< Complex< double > > SpecBuf;
-    fakeImpl->getSpectrum( fp, SpecBuf );
+// std::vector< Complex< double > > SpecBuf;
+// fakeImpl->getSpectrum( fp, SpecBuf );
 
-    uint32_t N2 = Buf2.size();
-    std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig2.iqc", std::fstream::binary );
+// uint32_t N2 = Buf2.size();
+// std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig2.iqc", std::fstream::binary );
 
-    fileOut.write( ( char* )( Buf2.data() ), sizeof( uint8_t ) * 2 * N2 );
+// fileOut.write( ( char* )( Buf2.data() ), sizeof( uint8_t ) * 2 * N2 );
 
-    fileOut.close();
+// fileOut.close();
 
     return 0;
 }

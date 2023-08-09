@@ -14,6 +14,7 @@ struct ReceiverHWImpl::Pimpl {
     int n_read{ 0 };
     int dev_index { 0 };
     int dev_given { 0 };
+    uint32_t samCount;
     rtlsdr_dev_t* dev { nullptr };
     int do_exit { 0 };
 
@@ -72,6 +73,7 @@ void ReceiverHWImpl::setSettings(  BaseSettings* sett ) {
     ReceiverSettings* realset =  dynamic_cast<  ReceiverSettings* >( sett );
 
     m_d->set( *realset );
+    m_d->samCount = realset->sampleCount;
 
 
 }
@@ -137,8 +139,45 @@ bool ReceiverHWImpl::getComplex( const BaseSettings* settings, ReceiverHWImpl::B
 
 bool ReceiverHWImpl::getComplex(  Buffer& out ) {
 
+    auto size = m_d->samCount; //
+    size = m_d->roundPowerTwo( size );
+    out.resize( size );
+    auto bytesToRead = 2 * m_d->samCount; //
+    bytesToRead = m_d->roundPowerTwo( bytesToRead );
+    m_d->resetBuffer();
+    auto result = rtlsdr_read_sync( m_d->dev, out.data(), bytesToRead, &( m_d->n_read ) );
+
+    if( result < 0 )
+        std::cerr << "WARNING: sync read failed." << std::endl;
+
+    return result;
+
 }
 void ReceiverHWImpl::getSpectrum(  SpectBuff& out ) {
+
+
+    IReceiver::Buffer signal;
+    auto size = m_d->samCount;
+    size = m_d->roundPowerTwo( size );
+    signal.resize( size );
+    getComplex( signal );
+
+    std::vector< Complex< float > > signalFloat;
+    signalFloat.resize( size );
+    for( size_t i = 0; i < signalFloat.size(); i++ ) {
+        signalFloat[ i ].re = ( static_cast< float >( signal[ i ].re ) - 127.5f );
+        signalFloat[ i ].im = ( static_cast< float >( signal[ i ].im ) - 127.5f );
+    }
+
+    IReceiver::SpectBuff signalDouble( signalFloat.begin(), signalFloat.end() );
+
+    for( size_t i = 0; i < signalDouble.size(); i++ ) {
+        if( i % 2 == 0 )
+            signalDouble[ i ] = -signalDouble[ i ];
+    }
+    out.resize( size );
+
+    fft( signalDouble, out, signalDouble.size() );
 
 }
 
