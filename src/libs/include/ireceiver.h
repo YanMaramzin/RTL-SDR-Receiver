@@ -16,7 +16,7 @@ struct RfSettings {
     uint32_t sampleFreq; // fd
     int gain { 0 };
     int ppm_error { 0 };
-    int agcMode { 0 };
+    int agcMode { 1 };
 };
 
 struct ReceiverSettings: public BaseSettings {

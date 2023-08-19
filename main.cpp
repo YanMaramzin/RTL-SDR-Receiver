@@ -7,38 +7,42 @@ using namespace std;
 
 // fake: complex and spectrum writing in file and have 2nd version (withtout settings)
 // real: complex and spectrum writing in file and have 2nd version (withtout settings)
+// real: complex working, write complex on Fc=0, AGC mode changed to on
+
 
 int main() {
 
 
     auto reImpl = ReceiverWrapper::getReceiverByName( "hw" );
-    uint32_t centralFreq = 103.802e6;
-    uint32_t sampleFreq = 2.6e6;
-    RfSettings sett { centralFreq, sampleFreq, 400 };
+    uint32_t centralFreq = 103800000;
+    uint32_t sampleFreq = 2600000;
+    RfSettings sett { centralFreq, sampleFreq, 490 };
 
     ReceiverSettings recset;
-    recset.sampleCount = ( uint32_t )512; // must be 512 or higher
+    recset.sampleCount = ( uint32_t )4194304; // must be 512 or higher
     recset.rfSettings = sett;
     BaseSettings* rp = &recset;
     reImpl->setSettings( rp );
 
-// std::vector< Complex< uint8_t > > Buf;
+    std::vector< Complex< uint8_t > > Buf;
 // reImpl->getComplex(  Buf );
 
 // std::vector< Complex< uint8_t > > Buf2;
 // reImpl->getComplex(  rp, Buf2 );
 
-    std::vector< Complex< double > > SpBuf;
-    reImpl->getSpectrum( SpBuf );
+// std::vector< Complex< double > > SpBuf;
+// reImpl->getSpectrum( SpBuf );
 
-// uint32_t N = Buf.size();
-// std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
 
-// for( uint32_t i = 0; i < 5; i++ ) {
-// recImpl->getComplex( rp, Buf );
-// fileOut.write( ( char* )( Buf.data() ), sizeof( uint8_t ) * 2 * N );
-// }
-// fileOut.close();
+    std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
+
+    for( uint32_t i = 0; i < 3; i++ ) {
+        reImpl->getComplex( rp, Buf );
+        uint32_t N = Buf.size();
+        fileOut.write( ( char* )( Buf.data() ), sizeof( uint8_t ) * 2 * N );
+
+    }
+    fileOut.close();
 
 
 // sinParams sin1 { 0, 10 };
