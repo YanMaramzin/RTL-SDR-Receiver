@@ -25,12 +25,26 @@ template < typename Type >
 std::vector< Complex< Type > > FakeReceiver::GenSignal( const fakeParams* fakeset ) {
     GenNoise WNGen;
     Generator_sin SnGen;
-    std::vector< Complex< Type > > data = WNGen.GenWN< Type >( fakeset->noiseLVL, fakeset->sampleCount );
+    std::vector< Complex< double > > Wdata = WNGen.GenWN< double >( fakeset->noiseLVL, fakeset->sampleCount );
+
+    double a0 =  sqrt( 1.5 ) * pow( 10, fakeset->noiseLVL / 20 );// sqrt( pow( 10, fakeset->noiseLVL / 20 ) )
+    Complex< double > A0;
+    A0.re = a0;
+    A0.im = A0.re;
+    std::vector< Complex< Type > > data( fakeset->sampleCount );
+
     for( uint32_t i = 0; i < fakeset->sinPar.size(); i++ ) {
-        std::vector< Complex< Type > > dataSin = SnGen.gen_sin< Type >( fakeset->sinPar[ i ].amp,  fakeset->sinPar[ i ].freq, fakeset->fd,  fakeset->sampleCount );
+
+        std::vector< Complex< double > > dataSin = SnGen.gen_sin< double >( fakeset->sinPar[ i ].amp,  fakeset->sinPar[ i ].freq, fakeset->fd,  fakeset->sampleCount );
+        Complex< double > a = 0;
+        a.im = fakeset->sinPar[ i ].amp;
+        // a.re = a.im;
         for( uint64_t j = 0; j < fakeset->sampleCount; j++ ) {
-            data[ j ] += dataSin[ j ];
+            Wdata[ j ] += dataSin[ j ] + a;
         }
+    }
+    for( uint64_t j = 0; j < fakeset->sampleCount; j++ ) {
+        data[ j ] += Wdata[ j ] + A0;
     }
     return data;
 }
