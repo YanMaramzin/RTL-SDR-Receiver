@@ -1,1 +1,0 @@
-/usr/bin/afl-g++ -fPIC -ggdb -g -O0 -shared -Wl,-soname,libreceiver.so -o libreceiver.so CMakeFiles/receiver.dir/src/fft.cpp.o CMakeFiles/receiver.dir/src/receiverhwimpl.cpp.o CMakeFiles/receiver.dir/src/receiversoftimpl.cpp.o CMakeFiles/receiver.dir/src/receiverwrapper.cpp.o  /usr/lib/x86_64-linux-gnu/libusb-1.0.so -lfftw3 -lrtlsdr 
