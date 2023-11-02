@@ -5,20 +5,24 @@
 #include <stdlib.h>
 #include <vector>
 #include <memory>
-#include "include/receiver/ireceiver.h"
+#include "ireceiver.h"
 
-class ReceiverHWImpl : public IReceiver
-{
+class ReceiverHWImpl: public IReceiver {
 public:
     ReceiverHWImpl();
     ~ReceiverHWImpl() override;
 
-    bool getComplex(const ReceiverSettings &settings, Buffer &out) override;
-    void getSpectrum(const ReceiverSettings &settings, SpectBuff &out) override;
+    virtual bool getComplex( const BaseSettings* settings, Buffer& out ) override final;
+    virtual void getSpectrum( const BaseSettings* settings, SpectBuff& out )override final;
+    virtual void setSettings(  BaseSettings* sett )  override final;
+
+    virtual bool getComplex(  Buffer& out  ) override final;
+    virtual void getSpectrum(  SpectBuff& out ) override final;
+
 
 private:
     struct Pimpl;
-    std::unique_ptr<Pimpl> m_d;
+    std::unique_ptr< Pimpl > m_d;
 
 };
 
