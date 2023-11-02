@@ -72,3 +72,5 @@ PRIVATE
 target_link_libraries(${PROJECT_NAME} ${LIBUSB_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} fftw3)
 target_link_libraries(${PROJECT_NAME} rtlsdr)
+target_link_libraries(${PROJECT_NAME} Base)
+target_link_libraries(${PROJECT_NAME} DSP)
