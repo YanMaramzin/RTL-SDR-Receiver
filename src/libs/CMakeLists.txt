@@ -12,7 +12,7 @@ endif()
 
 find_package(PkgConfig REQUIRED)
 find_package(Threads)
-find_package(fftw3)
+#find_package(fftw3)
 find_package(LibUSB REQUIRED)
 
 if(NOT LIBUSB_FOUND)
@@ -24,21 +24,18 @@ endif()
 
 
 add_library(${PROJECT_NAME} SHARED
-    include/ireceiver.h
-    include/receiverwrapper.h
-    include/complex.h
+    ../../include/receiver/ireceiver.h
+    ../../include/receiver/receiverwrapper.h
 
-    src/fft.h
-    src/fft.cpp
-    src/gen_sin.h
+    ../../include/receiver/gen_sin.h
 
-    src/gen_noise.h
+    ../../include/receiver/gen_noise.h
 
-    src/receiverhwimpl.h
-    src/receiverhwimpl.cpp
-    src/receiversoftimpl.h
-    src/receiversoftimpl.cpp
-    src/receiverwrapper.cpp
+    ../../include/receiver/receiverhwimpl.h
+    ../receiverhwimpl.cpp
+    ../../include/receiver/receiversoftimpl.h
+    ../receiversoftimpl.cpp
+    ../receiverwrapper.cpp
     #    share/rtl-sdr.h
     #    share/librtlsdr.c
     #    share/reg_field.h
