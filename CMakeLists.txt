@@ -5,11 +5,16 @@ set(CMAKE_CXX_FLAGS_DEBUG "-ggdb -g -O0")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+if (CMAKE_BUILD_TYPE STREQUAL Release)
 add_executable(radio_receiver main.cpp)
+endif()
 
 include(GenerateExportHeader)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
+if (CMAKE_BUILD_TYPE STREQUAL Release)
 target_link_libraries(radio_receiver receiver)
+endif()
 
 find_package(PkgConfig REQUIRED)
 find_package(LibUSB REQUIRED)
