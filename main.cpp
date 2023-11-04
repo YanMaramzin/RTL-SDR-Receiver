@@ -13,50 +13,49 @@ using namespace std;
 
 
 int main() {
+//real receiver:
+ auto reImpl = ReceiverWrapper::getReceiverByName( "hw" );
+ uint32_t centralFreq = 88900000;
+ uint32_t sampleFreq = 960000;
+ RfSettings sett { centralFreq, sampleFreq, 490 };
 
+ ReceiverSettings recset;
+ recset.sampleCount = ( uint32_t )4194304; // must be 512 or higher 4194304
+ recset.rfSettings = sett;
+ BaseSettings* rp = &recset;
+ reImpl->setSettings( rp );
 
-// auto reImpl = ReceiverWrapper::getReceiverByName( "hw" );
-// uint32_t centralFreq = 104200000;
-// uint32_t sampleFreq = 960000;
-// RfSettings sett { centralFreq, sampleFreq, 490 };
+ std::vector< Complex< uint8_t > > Buf;
 
-// ReceiverSettings recset;
-// recset.sampleCount = ( uint32_t )1024; // must be 512 or higher 4194304
-// recset.rfSettings = sett;
-// BaseSettings* rp = &recset;
-// reImpl->setSettings( rp );
+ std::vector< Complex< double > > SpBuf;
+ reImpl->getSpectrum( rp, SpBuf );
 
-// std::vector< Complex< uint8_t > > Buf;
+ std::ofstream complexOut( "/home/anatoly/work/workC++/Demodulation/Dest/comsig11.iqc", std::fstream::binary );
+ std::ofstream spectOut( "/home/anatoly/work/workC++/Demodulation/Dest/comsig21.iqc", std::fstream::binary );
 
-// std::vector< Complex< double > > SpBuf;
-// reImpl->getSpectrum( rp, SpBuf );
+ for( uint32_t i = 0; i < 4; i++ ) {
+ reImpl->getComplex( Buf );
+ uint32_t N = Buf.size();
+ complexOut.write( ( char* )( Buf.data() ), sizeof( uint8_t ) * 2 * N );
 
-// std::ofstream fileOut( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
-// std::ofstream fileOut222( "/home/ann/WORK/work_mtlb/comsig.iqc", std::fstream::binary );
+ }
+ complexOut.close();
 
-// for( uint32_t i = 0; i < 1; i++ ) {
-// reImpl->getComplex( Buf );
-// uint32_t N = Buf.size();
-// fileOut.write( ( char* )( Buf.data() ), sizeof( uint8_t ) * 2 * N );
+ for( uint32_t i = 0; i < 4; i++ ) {
+ reImpl->getSpectrum( SpBuf );
+ uint32_t N = SpBuf.size();
+ spectOut.write( ( char* )( SpBuf.data() ), sizeof( double ) * 2 * N );
 
-// }
-// fileOut.close();
+ }
+ spectOut.close();
 
-// for( uint32_t i = 0; i < 1; i++ ) {
-// reImpl->getSpectrum( SpBuf );
-// uint32_t N = SpBuf.size();
-// fileOut222.write( ( char* )( SpBuf.data() ), sizeof( double ) * 2 * N );
-
-// }
-// fileOut.close();
-
+//fakeReceiver:
+/*
+    auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
 
     sinParams sin1 { 6, 10 };
     sinParams sin2 { 0, 30 };
     sinParams sin3 { 0, 30 };
-
-    auto fakeImpl = ReceiverWrapper::getReceiverByName( "fake" );
-
 
     fakeParams fakeset;
     fakeset.fd = 1600;
@@ -77,14 +76,14 @@ int main() {
     uint32_t N2 = Buf2.size();
     uint32_t SpN2 = SpecBuf.size();
 
-    std::ofstream ComfileOut( "/home/ann/WORK/work_mtlb/comsig1.iqc", std::fstream::binary );
+    std::ofstream ComfileOut( "/home/anatoly/work/workC++/Demodulation/Dest/comsig1.iqc", std::fstream::binary );
     ComfileOut.write( ( char* )( Buf2.data() ), sizeof( uint8_t ) * 2 * N2 );
     ComfileOut.close();
 
-    std::ofstream SpecfileOut( "/home/ann/WORK/work_mtlb/comsig2.iqc", std::fstream::binary );
+    std::ofstream SpecfileOut( "/home/anatoly/work/workC++/Demodulation/Dest/comsig2.iqc", std::fstream::binary );
     SpecfileOut.write( ( char* )( SpecBuf.data() ), sizeof( double ) * 2 * SpN2 );
     SpecfileOut.close();
-
+*/
     return 0;
 }
 
