@@ -1,4 +1,4 @@
-#include "../include/receiver/receiversoftimpl.h"
+#include "receiversoftimpl.h"
 
 FakeReceiver::FakeReceiver() {
 
