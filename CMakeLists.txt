@@ -1,17 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(radio_receiver LANGUAGES CXX)
+project(receiver LANGUAGES CXX C)
 set(CMAKE_CXX_FLAGS_DEBUG "-ggdb -g -O0")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(radio_receiver main.cpp)
 
-#install(TARGETS radio_receiver
-#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/src/cmake)
-add_subdirectory(src)
+include(GenerateExportHeader)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 target_link_libraries(radio_receiver receiver)
 
 find_package(PkgConfig REQUIRED)
@@ -27,7 +24,7 @@ endif()
 
 file(GLOB SRC include/${PROJECT_NAME}/*.h src/*.cpp)
 
-#add_library(${PROJECT_NAME} SHARED ${SRC})
+add_library(${PROJECT_NAME} SHARED ${SRC})
 
 #add_subdirectory(libs/librtlsdr)
 #add_subdirectory(libs/share)
@@ -53,4 +50,3 @@ target_link_libraries(${PROJECT_NAME} Base)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/receiver)
-
