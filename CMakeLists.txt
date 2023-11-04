@@ -9,7 +9,6 @@ if (CMAKE_BUILD_TYPE STREQUAL Release)
 add_executable(radio_receiver main.cpp)
 endif()
 
-include(GenerateExportHeader)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 if (CMAKE_BUILD_TYPE STREQUAL Release)
@@ -31,11 +30,6 @@ file(GLOB SRC include/${PROJECT_NAME}/*.h src/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${SRC})
 
-#add_subdirectory(libs/librtlsdr)
-#add_subdirectory(libs/share)
-
-generate_export_header(${PROJECT_NAME})
-
 target_include_directories(${PROJECT_NAME}
 INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -53,5 +47,4 @@ target_link_libraries(${PROJECT_NAME} rtlsdr)
 target_link_libraries(${PROJECT_NAME} DSP)
 target_link_libraries(${PROJECT_NAME} Base)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/receiver)
