@@ -26,7 +26,7 @@ if(NOT THREADS_FOUND)
     message(FATAL_ERROR "pthreads(-win32) required to compile rtl-sdr")
 endif()
 
-file(GLOB SRC include/${PROJECT_NAME}/*.h src/*.cpp)
+file(GLOB SRC include/${PROJECT_NAME}/*.h source/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${SRC})
 
