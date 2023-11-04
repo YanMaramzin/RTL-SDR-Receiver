@@ -1,4 +1,4 @@
-#include "../include/receiver/receiverhwimpl.h"
+#include "receiverhwimpl.h"
 #include <iostream>
 #include <errno.h>
 #include <signal.h>
@@ -224,7 +224,7 @@ void ReceiverHWImpl::getSpectrum( const BaseSettings* settings, SpectBuff& out  
  * Также она выводит название устройства, производителя и серию.
  */
 int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
-    int device;
+    uint32_t device;
     int offset;
     char* s2;
     char vendor[ 256 ] = { 0 }, product[ 256 ] = { 0 }, serial[ 256 ] = { 0 };
@@ -234,7 +234,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
         return -1;
     }
     std::cerr << "Found " << device_count << " device(s):\n";
-    for( int i = 0; i < device_count; i++ ) {
+    for( uint32_t i = 0; i < device_count; i++ ) {
         if( rtlsdr_get_device_usb_strings( i, vendor, product, serial ) == 0 ) {
             std::cerr << i << ": " << vendor << ", " << product << ", " << serial << "\n";
         } else {
@@ -244,12 +244,12 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
 
     /* does string look like raw id number */
     device = ( int )strtol( s, &s2, 0 );
-    if( s2[ 0 ] == '\0' && device >= 0 && device < device_count ) {
+    if( s2[ 0 ] == '\0' && device < device_count ) {
         std::cerr << "Using device " << device << ": " << rtlsdr_get_device_name( ( uint32_t )device ) << "\n";
         return device;
     }
     /* does string exact match a serial */
-    for( int i = 0; i < device_count; i++ ) {
+    for( uint32_t i = 0; i < device_count; i++ ) {
         rtlsdr_get_device_usb_strings( i, vendor, product, serial );
         if( strcmp( s, serial ) != 0 ) {
             continue;
@@ -259,7 +259,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
         return device;
     }
     /* does string prefix match a serial */
-    for( int i = 0; i < device_count; i++ ) {
+    for( uint32_t i = 0; i < device_count; i++ ) {
         rtlsdr_get_device_usb_strings( i, vendor, product, serial );
         if( strncmp( s, serial, strlen( s ) ) != 0 ) {
             continue;
@@ -269,7 +269,7 @@ int ReceiverHWImpl::Pimpl::deviceSearch( char const* s ) {
         return device;
     }
     /* does string suffix match a serial */
-    for( int i = 0; i < device_count; i++ ) {
+    for( uint32_t i = 0; i < device_count; i++ ) {
         rtlsdr_get_device_usb_strings( i, vendor, product, serial );
         offset = strlen( serial ) - strlen( s );
         if( offset < 0 ) {
