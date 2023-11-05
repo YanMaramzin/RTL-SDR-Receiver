@@ -7,7 +7,7 @@
 
 TEST( genSinTest, output_values ) {
 
-    std::ifstream file( "dat/test_val_sin", std::ifstream::binary );
+    std::ifstream file( "bin/test_val_sin", std::ifstream::binary );
     if( !file.is_open() ) {
         throw std::runtime_error( "cant open file " );
     }

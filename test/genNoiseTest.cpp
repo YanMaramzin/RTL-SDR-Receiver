@@ -31,5 +31,5 @@ TEST( TestNoise, WNFine ) {
         vec[ 2 * i + 1 ] = data_[ i ].im;
 	}
 
-	write.writeFile( "/home/maksim/work/w_ml/testNoise", vec, 1 );
+    write.writeFile( "bin/testNoise", vec, 1 );
 }
