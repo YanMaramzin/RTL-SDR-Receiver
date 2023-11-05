@@ -18,12 +18,16 @@ endif()
 find_package(PkgConfig REQUIRED)
 find_package(LibUSB REQUIRED)
 find_package(Threads)
+find_package(RtlSdr REQUIRED)
 
 if(NOT LIBUSB_FOUND)
     message(FATAL_ERROR "LibUSB 1.0 required to compile rtl-sdr")
 endif()
 if(NOT THREADS_FOUND)
     message(FATAL_ERROR "pthreads(-win32) required to compile rtl-sdr")
+endif()
+if(NOT RTLSDR_FOUND)
+    message(FATAL_ERROR "RTL-SDR required")
 endif()
 
 file(GLOB SRC include/${PROJECT_NAME}/*.h source/*.cpp)
@@ -39,7 +43,6 @@ PRIVATE
     ${LIBUSB_INCLUDE_DIR}
     ${THREADS_PTHREADS_INCLUDE_DIR}
 )
-
 
 target_link_libraries(${PROJECT_NAME} ${LIBUSB_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} fftw3)
