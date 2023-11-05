@@ -1,3 +1,0 @@
-[submodule "src/libs/librtlsdr"]
-	path = src/libs/librtlsdr
-	url = https://github.com/librtlsdr/librtlsdr.git
