@@ -24,12 +24,4 @@ TEST( TestNoise, WNFine ) {
     avr /= (N * N);
     ASSERT_NEAR( avr, pow( 10, W / 10 ), pow( 10, W / 10 ) * 1e-2 );
 
-	Writer write;
-	std::vector< float > vec( 2 * N );
-	for( uint64_t i = 0; i < N; i++ ) {
-        vec[ 2 * i ] = data_[ i ].re;
-        vec[ 2 * i + 1 ] = data_[ i ].im;
-	}
-
-    write.writeFile( "bin/testNoise", vec, 1 );
 }
